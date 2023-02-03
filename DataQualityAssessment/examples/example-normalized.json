@@ -1,0 +1,54 @@
+{
+  "id": "urn:ngsi-ld:DataQualityAssessment:Temperature:smartsantander:u7jcfa:f3058",
+  "type": "DataQualityAssessment",
+  "dateCalculated": {
+    "type": "DateTime",
+    "value": "2022-09-10T10:01:20Z"
+  },
+  "source": {
+    "type": "Text",
+    "value": "https://salted-project.eu"
+  },
+  "outlier": {
+    "type": "StructuredValue",
+    "value": {
+      "isOutlier": {
+        "type": "Boolean",
+        "value": true
+      },
+      "methodology": {
+        "type": "Text",
+        "value": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"
+      }
+    }
+  },
+  "synthetic": {
+    "type": "StructuredValue",
+    "value": {
+      "isSynthetic": {
+        "type": "Boolean",
+        "value": false
+      },
+      "methodology": {
+        "type": "Text",
+        "value": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"
+      }
+    }
+  },
+  "precision": {
+    "type": "Number",
+    "value": 0.97
+  },
+  "accuracy": {
+    "type": "Number",
+    "value": 0.98
+  },
+  "timeliness": {
+    "type": "Number",
+    "value": 3
+  },
+  "completeness": {
+    "type": "Number",
+    "value": 0.5
+  }
+}

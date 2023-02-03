@@ -1,0 +1,9 @@
+description: This is a compilation list of all CONTRIBUTORS across different objects (data models) alphabetically ordered.
+contributors:
+- name: Laura
+  surname: Martín
+  mail: lmartin@tlmat.unican.es
+  organization: University of Cantabria (UC)
+  project: https://salted-project.eu/
+  comments:
+  year: 2023

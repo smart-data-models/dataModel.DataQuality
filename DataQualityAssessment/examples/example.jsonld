@@ -1,0 +1,25 @@
+{
+  "id": "urn:ngsi-ld:DataQualityAssessment:Temperature:smartsantander:u7jcfa:f3058",
+  "type": "DataQualityAssessment",
+  "dateCalculated": {
+    "@type": "DateTime",
+    "@value": "2022-09-10T10:01:20Z"
+  },
+  "source": "https://salted-project.eu",
+  "outlier":{
+    "isOutlier": true,
+    "methodology": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"
+  },     
+  "synthetic":{
+    "isSynthetic": false,
+    "methodology": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"
+  },
+  "accuracy": 0.98,
+  "timeliness": 3,
+  "precision": 0.97,
+  "completeness": 0.5,
+  "@context": [
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.DataQualityAssessment/master/context.jsonld",
+    "https://smartdatamodels.org/context.jsonld"
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$schemaVersion": "0.0.1",
+  "$id": "https://smart-data-models.github.io/dataModel.DataQualityAssessment/DataQualityAssessment/schema.json",
+  "title": "Smart Data Models - Data Quality Assessment schema",
+  "modelTags": "",
+  "derivedFrom": "",
+  "license": "https://smart-data-models.github.io/dataModel.DataQualityAssessment/DataQualityAssessment/LICENSE.md",
+  "description": "This entity describes the data quality properties of a measurement, such as temperature.",
+  "type": "object",
+  "required": [
+    "id",
+    "type"
+  ],
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+    "properties": {
+      "type": {
+        "type": "string",
+        "enum": [
+          "DataQualityAssessment"
+        ],
+        "description": "Property. NGSI Entity type. It has to be DataQualityAssessment"
+      },
+      "dateCalculated": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Property. Date of the calculated entity defined by the user."
+      },
+      "outlier": {
+        "type": "object",
+        "description": "Property. Includes information about the outlier characteristics of the measurement.",
+        "properties": {
+          "isOutlier": {
+            "type": "boolean",
+            "description": "Property. Determine whether the measurement has been considered an outlier or not."
+          },
+          "methodology": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256,
+                "pattern": "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$",
+                "description": "Property. Identifier format of any NGSI entity"
+              },
+              {
+                "type": "string",
+                "format": "uri",
+                "description": "Property. Identifier format of any NGSI entity"
+              }
+            ],
+            "description": "Relationship. Reference to the other entity including AI methodology information."
+          }
+        } 
+      },
+      "synthetic": {
+        "type": "object",
+        "description": "Property. Includes information about the origin of the measurement.",
+        "properties": {
+          "isSynthetic": {
+            "type": "boolean",
+            "description": "Property. Determine whether the measurement has been created synthetically or not."
+          },
+          "methodology": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256,
+                "pattern": "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$",
+                "description": "Property. Identifier format of any NGSI entity"
+              },
+              {
+                "type": "string",
+                "format": "uri",
+                "description": "Property. Identifier format of any NGSI entity"
+              }
+            ],
+            "description": "Relationship. Reference to the other entity including AI methodology information."
+          }
+        } 
+      },
+      "accuracy": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1,
+        "description": "Property. Accuracy measures the maximum systematic numerical error produced in a sensor measurement. Units:'P1'."
+      },
+      "timeliness": {
+        "type": "number",
+        "description": "Property. Average timeliness of the data-stream. Units:'minutes'."
+      },
+      "completeness": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1,
+        "description": "Property. Completeness quantifies the number of missed measurements or observations in a given time window. Units:'P1'."
+      },
+      "precision": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1,
+        "description": "Property. Precision measures the standard deviation of a dataset. That is, it measures how close the values in the dataset are to each other. Units:'P1'."
+      }
+    }
+  }
+  ]
+}

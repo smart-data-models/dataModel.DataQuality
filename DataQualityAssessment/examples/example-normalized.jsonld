@@ -1,0 +1,71 @@
+{
+  "id": "urn:ngsi-ld:DataQualityAssessment:Temperature:smartsantander:u7jcfa:f3058",
+  "type": "DataQualityAssessment",
+  "dateCalculated": {
+    "type": "Property",
+    "value": {
+      "@type": "DateTime",
+      "@value": "2022-09-10T10:01:20Z"
+    }
+  },
+  "source": {
+    "type": "Property",
+    "value": "https://salted-project.eu"
+  },
+  "outlier": {
+    "type": "Property",
+    "value": {
+      "isOutlier": {
+        "type": "Property",
+        "value": true
+      },
+      "methodology": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"
+      }
+    },
+    "observedAt": "2022-09-10T10:01:20Z"
+  },
+  "synthetic": {
+    "type": "Property",
+    "value": {
+      "isSynthetic": {
+        "type": "Property",
+        "value": false
+    },
+    "methodology": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"
+      }
+    },
+    "observedAt": "2022-09-10T10:01:20Z"
+  },
+  "accuracy": {
+    "type": "Property",
+    "value": 0.98,
+    "observedAt": "2022-09-10T10:01:20Z",
+    "unitCode": "P1"
+  },
+  "timeliness": {
+    "type": "Property",
+    "value": 3,
+    "observedAt": "2022-09-10T10:01:20Z",
+    "unitCode": "minutes"
+  },
+  "precision": {
+    "type": "Property",
+    "value": 0.97,
+    "observedAt": "2022-09-10T10:01:20Z",
+    "unitCode": "P1"
+  },
+  "completeness": {
+    "type": "Property",
+    "value": 0.5,
+    "observedAt": "2022-09-10T10:01:20Z",
+    "unitCode": "P1"
+  },
+  "@context": [
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.DataQualityAssessment/master/context.jsonld",
+      "https://smartdatamodels.org/context.jsonld"
+  ]
+}
