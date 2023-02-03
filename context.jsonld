@@ -1,0 +1,26 @@
+{
+    "@context": {
+        "accuracy": "https://smartdatamodels.org/dataModel.DataQuality/accuracy",
+        "address": "https://smartdatamodels.org/address",
+        "alternateName": "https://smartdatamodels.org/alternateName",
+        "areaServed": "https://smartdatamodels.org/areaServed",
+        "completeness": "https://smartdatamodels.org/dataModel.DataQuality/completeness",
+        "dataProvider": "https://smartdatamodels.org/dataProvider",
+        "dateCalculated": "https://smartdatamodels.org/dataModel.DataQuality/dateCalculated",
+        "dateCreated": "https://smartdatamodels.org/dateCreated",
+        "dateModified": "https://smartdatamodels.org/dateModified",
+        "description": "http://purl.org/dc/terms/description",
+        "id": "@id",
+        "location": "ngsi-ld:location",
+        "name": "https://smartdatamodels.org/name",
+        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
+        "outlier": "https://smartdatamodels.org/dataModel.DataQuality/outlier",
+        "owner": "https://smartdatamodels.org/owner",
+        "precision": "https://smartdatamodels.org/dataModel.DataQuality/precision",
+        "seeAlso": "https://smartdatamodels.org/seeAlso",
+        "source": "https://smartdatamodels.org/source",
+        "synthetic": "https://smartdatamodels.org/dataModel.DataQuality/synthetic",
+        "timeliness": "https://smartdatamodels.org/dataModel.DataQuality/timeliness",
+        "type": "@type"
+    }
+}
