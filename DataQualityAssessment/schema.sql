@@ -1,0 +1,3 @@
+/* (Beta) Export of data model DataQualityAssessment of the subject dataModel.DataQuality for a postgreSQL database. Pending translation of enumerations and multityped attributes */
+CREATE TYPE DataQualityAssessment_type AS ENUM ('DataQualityAssessment');
+CREATE TABLE DataQualityAssessment (accuracy text, address json, alternateName text, areaServed text, completeness text, dataProvider text, dateCalculated timestamp, dateCreated timestamp, dateModified timestamp, description text, id text, location json, name text, outlier json, owner json, precision text, seeAlso json, source text, synthetic json, timeliness text, type DataQualityAssessment_type);
