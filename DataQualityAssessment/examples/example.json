@@ -11,8 +11,8 @@
     "isSynthetic": false,
     "methodology": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"
   },
-  "accuracy": 0.98,
+  "accuracy": 0.25,
   "timeliness": 3,
-  "precision": 0.97,
+  "precision": 1.3,
   "completeness": 0.5
 }

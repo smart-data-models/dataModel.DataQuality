@@ -37,11 +37,11 @@
   },
   "precision": {
     "type": "Number",
-    "value": 0.97
+    "value": 1.3
   },
   "accuracy": {
     "type": "Number",
-    "value": 0.98
+    "value": 0.25
   },
   "timeliness": {
     "type": "Number",
