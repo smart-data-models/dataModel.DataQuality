@@ -89,9 +89,7 @@
       },
       "accuracy": {
         "type": "number",
-        "minimum": 0,
-        "maximum": 1,
-        "description": "Property. Accuracy measures the maximum systematic numerical error produced in a sensor measurement. Units:'P1'."
+        "description": "Property. Accuracy measures the maximum systematic numerical error produced in a sensor measurement."
       },
       "timeliness": {
         "type": "number",
@@ -105,9 +103,7 @@
       },
       "precision": {
         "type": "number",
-        "minimum": 0,
-        "maximum": 1,
-        "description": "Property. Precision measures the standard deviation of a dataset. That is, it measures how close the values in the dataset are to each other. Units:'P1'."
+        "description": "Property. Precision measures the standard deviation of a dataset. That is, it measures how close the values in the dataset are to each other."
       }
     }
   }

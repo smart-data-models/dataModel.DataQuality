@@ -42,9 +42,9 @@
   },
   "accuracy": {
     "type": "Property",
-    "value": 0.98,
+    "value": 0.25,
     "observedAt": "2022-09-10T10:01:20Z",
-    "unitCode": "P1"
+    "unitCode": "CEL"
   },
   "timeliness": {
     "type": "Property",
@@ -54,9 +54,9 @@
   },
   "precision": {
     "type": "Property",
-    "value": 0.97,
+    "value": 1.3,
     "observedAt": "2022-09-10T10:01:20Z",
-    "unitCode": "P1"
+    "unitCode": "CEL"
   },
   "completeness": {
     "type": "Property",
