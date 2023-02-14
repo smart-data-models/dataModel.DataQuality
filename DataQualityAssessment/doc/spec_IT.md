@@ -7,16 +7,18 @@
 [documento generato automaticamente](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 <!-- /15-License -->  
 <!-- 20-Description -->  
+Descrizione globale: **Questa entità descrive le proprietà di qualità dei dati di una misurazione, come la temperatura.**  
+versione: 0.0.1  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
 
 ## Elenco delle proprietà  
 
 <sup><sub>[*] Se non c'è un tipo in un attributo è perché potrebbe avere diversi tipi o diversi formati/modelli</sub></sup>.  
-<!-- /30-PropertiesList -->  
+- `accuracy[number]`: L'accuratezza misura l'errore numerico sistematico massimo prodotto nella misurazione di un sensore.  - `address[object]`: L'indirizzo postale  . Model: [https://schema.org/address](https://schema.org/address)- `alternateName[string]`: Un nome alternativo per questa voce  - `areaServed[string]`: L'area geografica in cui viene fornito il servizio o l'articolo offerto.  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: La completezza quantifica il numero di misurazioni o osservazioni mancate in una determinata finestra temporale.  - `dataProvider[string]`: Una sequenza di caratteri che identifica il fornitore dell'entità di dati armonizzata.  - `dateCalculated[string]`: Data dell'entità calcolata definita dall'utente.  - `dateCreated[string]`: Timestamp di creazione dell'entità. Di solito viene assegnato dalla piattaforma di archiviazione.  - `dateModified[string]`: Timestamp dell'ultima modifica dell'entità. Di solito viene assegnato dalla piattaforma di archiviazione.  - `description[string]`: Descrizione dell'articolo  - `id[*]`: Identificatore univoco dell'entità  - `location[*]`: Riferimento geojson all'elemento. Può essere un punto, una stringa di linea, un poligono, un multi-punto, una stringa di linea o un poligono multiplo.  - `name[string]`: Il nome di questo elemento.  - `outlier[object]`: Include informazioni sulle caratteristiche anomale della misura.  - `owner[array]`: Un elenco contenente una sequenza di caratteri codificata JSON che fa riferimento agli ID univoci dei proprietari.  - `precision[number]`: La precisione misura la deviazione standard di un set di dati. In altre parole, misura quanto i valori del set di dati siano vicini l'uno all'altro.  - `seeAlso[*]`: elenco di uri che puntano a risorse aggiuntive sull'elemento  - `source[string]`: Una sequenza di caratteri che indica la fonte originale dei dati dell'entità come URL. Si consiglia di utilizzare il nome di dominio completamente qualificato del provider di origine o l'URL dell'oggetto di origine.  - `synthetic[object]`: Include informazioni sull'origine della misura.  - `timeliness[number]`: Tempestività media del flusso di dati  - `type[string]`: Tipo di entità NGSI. Deve essere DataQualityAssessment  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Proprietà richieste  
-- Nessuna proprietà richiesta  <!-- /35-RequiredProperties -->  
+- `id`  - `type`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -30,13 +32,10 @@ DataQualityAssessment:
   description: 'This entity describes the data quality properties of a measurement, such as temperature.'    
   properties:    
     accuracy:    
-      description: Accuracy measures the maximum systematic numerical error produced in a sensor measurement    
-      maximum: 1    
-      minimum: 0    
+      description: Accuracy measures the maximum systematic numerical error produced in a sensor measurement.    
       type: number    
       x-ngsi:    
         type: Property    
-        units: P1.    
     address:    
       description: The mailing address    
       properties:    
@@ -315,13 +314,10 @@ DataQualityAssessment:
       x-ngsi:    
         type: Property    
     precision:    
-      description: 'Precision measures the standard deviation of a dataset. That is, it measures how close the values in the dataset are to each other'    
-      maximum: 1    
-      minimum: 0    
+      description: 'Precision measures the standard deviation of a dataset. That is, it measures how close the values in the dataset are to each other.'    
       type: number    
       x-ngsi:    
         type: Property    
-        units: P1.    
     seeAlso:    
       description: list of uri pointing to additional resources about the item    
       oneOf:    
@@ -406,9 +402,9 @@ DataQualityAssessment:
     "isSynthetic": false,  
     "methodology": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"  
   },  
-  "accuracy": 0.98,  
+  "accuracy": 0.25,  
   "timeliness": 3,  
-  "precision": 0.97,  
+  "precision": 1.3,  
   "completeness": 0.5  
 }  
 ```  
@@ -456,11 +452,11 @@ DataQualityAssessment:
   },  
   "precision": {  
     "type": "Number",  
-    "value": 0.97  
+    "value": 1.3  
   },  
   "accuracy": {  
     "type": "Number",  
-    "value": 0.98  
+    "value": 0.25  
   },  
   "timeliness": {  
     "type": "Number",  
@@ -493,9 +489,9 @@ DataQualityAssessment:
     "isSynthetic": false,  
     "methodology": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"  
   },  
-  "accuracy": 0.98,  
+  "accuracy": 0.25,  
   "timeliness": 3,  
-  "precision": 0.97,  
+  "precision": 1.3,  
   "completeness": 0.5,  
   "@context": [  
     "https://raw.githubusercontent.com/smart-data-models/dataModel.DataQualityAssessment/master/context.jsonld",  
@@ -552,9 +548,9 @@ DataQualityAssessment:
   },  
   "accuracy": {  
     "type": "Property",  
-    "value": 0.98,  
+    "value": 0.25,  
     "observedAt": "2022-09-10T10:01:20Z",  
-    "unitCode": "P1"  
+    "unitCode": "CEL"  
   },  
   "timeliness": {  
     "type": "Property",  
@@ -564,9 +560,9 @@ DataQualityAssessment:
   },  
   "precision": {  
     "type": "Property",  
-    "value": 0.97,  
+    "value": 1.3,  
     "observedAt": "2022-09-10T10:01:20Z",  
-    "unitCode": "P1"  
+    "unitCode": "CEL"  
   },  
   "completeness": {  
     "type": "Property",  

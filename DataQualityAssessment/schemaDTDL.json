@@ -12,7 +12,7 @@
             "displayName": "accuracy",
             "@type": "Property",
             "schema": "long",
-            "comment": "Accuracy measures the maximum systematic numerical error produced in a sensor measurement"
+            "comment": "Accuracy measures the maximum systematic numerical error produced in a sensor measurement."
         },
         {
             "name": "alternateName",
@@ -92,7 +92,7 @@
             "displayName": "precision",
             "@type": "Property",
             "schema": "long",
-            "comment": "Precision measures the standard deviation of a dataset. That is, it measures how close the values in the dataset are to each other"
+            "comment": "Precision measures the standard deviation of a dataset. That is, it measures how close the values in the dataset are to each other."
         },
         {
             "name": "seeAlso",

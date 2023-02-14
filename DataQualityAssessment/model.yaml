@@ -2,13 +2,10 @@ DataQualityAssessment:
   description: 'This entity describes the data quality properties of a measurement, such as temperature.'
   properties:
     accuracy:
-      description: Accuracy measures the maximum systematic numerical error produced in a sensor measurement
-      maximum: 1
-      minimum: 0
+      description: Accuracy measures the maximum systematic numerical error produced in a sensor measurement.
       type: number
       x-ngsi:
         type: Property
-        units: P1.
     address:
       description: The mailing address
       properties:
@@ -287,13 +284,10 @@ DataQualityAssessment:
       x-ngsi:
         type: Property
     precision:
-      description: 'Precision measures the standard deviation of a dataset. That is, it measures how close the values in the dataset are to each other'
-      maximum: 1
-      minimum: 0
+      description: 'Precision measures the standard deviation of a dataset. That is, it measures how close the values in the dataset are to each other.'
       type: number
       x-ngsi:
         type: Property
-        units: P1.
     seeAlso:
       description: list of uri pointing to additional resources about the item
       oneOf:

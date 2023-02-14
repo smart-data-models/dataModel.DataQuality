@@ -7,16 +7,18 @@
 [document generated automatically](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 <!-- /15-License -->  
 <!-- 20-Description -->  
+Global description: **This entity describes the data quality properties of a measurement, such as temperature.**  
+version: 0.0.1  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
 
 ## List of properties  
 
 <sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-<!-- /30-PropertiesList -->  
+- `accuracy[number]`: Accuracy measures the maximum systematic numerical error produced in a sensor measurement  - `address[object]`: The mailing address  . Model: [https://schema.org/address](https://schema.org/address)- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: Completeness quantifies the number of missed measurements or observations in a given time window  - `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity.  - `dateCalculated[string]`: Date of the calculated entity defined by the user.  - `dateCreated[string]`: Entity creation timestamp. This will usually be allocated by the storage platform.  - `dateModified[string]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.  - `description[string]`: A description of this item  - `id[*]`: Unique identifier of the entity  - `location[*]`: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  - `name[string]`: The name of this item.  - `outlier[object]`: Includes information about the outlier characteristics of the measurement.  - `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `precision[number]`: Precision measures the standard deviation of a dataset. That is, it measures how close the values in the dataset are to each other  - `seeAlso[*]`: list of uri pointing to additional resources about the item  - `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.  - `synthetic[object]`: Includes information about the origin of the measurement.  - `timeliness[number]`: Average timeliness of the data-stream  - `type[string]`: NGSI Entity type. It has to be DataQualityAssessment  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
-- No required properties  <!-- /35-RequiredProperties -->  
+- `id`  - `type`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -30,13 +32,10 @@ DataQualityAssessment:
   description: 'This entity describes the data quality properties of a measurement, such as temperature.'    
   properties:    
     accuracy:    
-      description: Accuracy measures the maximum systematic numerical error produced in a sensor measurement    
-      maximum: 1    
-      minimum: 0    
+      description: Accuracy measures the maximum systematic numerical error produced in a sensor measurement.    
       type: number    
       x-ngsi:    
         type: Property    
-        units: P1.    
     address:    
       description: The mailing address    
       properties:    
@@ -315,13 +314,10 @@ DataQualityAssessment:
       x-ngsi:    
         type: Property    
     precision:    
-      description: 'Precision measures the standard deviation of a dataset. That is, it measures how close the values in the dataset are to each other'    
-      maximum: 1    
-      minimum: 0    
+      description: 'Precision measures the standard deviation of a dataset. That is, it measures how close the values in the dataset are to each other.'    
       type: number    
       x-ngsi:    
         type: Property    
-        units: P1.    
     seeAlso:    
       description: list of uri pointing to additional resources about the item    
       oneOf:    
@@ -406,9 +402,9 @@ DataQualityAssessment:
     "isSynthetic": false,  
     "methodology": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"  
   },  
-  "accuracy": 0.98,  
+  "accuracy": 0.25,  
   "timeliness": 3,  
-  "precision": 0.97,  
+  "precision": 1.3,  
   "completeness": 0.5  
 }  
 ```  
@@ -456,11 +452,11 @@ DataQualityAssessment:
   },  
   "precision": {  
     "type": "Number",  
-    "value": 0.97  
+    "value": 1.3  
   },  
   "accuracy": {  
     "type": "Number",  
-    "value": 0.98  
+    "value": 0.25  
   },  
   "timeliness": {  
     "type": "Number",  
@@ -493,9 +489,9 @@ DataQualityAssessment:
     "isSynthetic": false,  
     "methodology": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"  
   },  
-  "accuracy": 0.98,  
+  "accuracy": 0.25,  
   "timeliness": 3,  
-  "precision": 0.97,  
+  "precision": 1.3,  
   "completeness": 0.5,  
   "@context": [  
     "https://raw.githubusercontent.com/smart-data-models/dataModel.DataQualityAssessment/master/context.jsonld",  
@@ -552,9 +548,9 @@ DataQualityAssessment:
   },  
   "accuracy": {  
     "type": "Property",  
-    "value": 0.98,  
+    "value": 0.25,  
     "observedAt": "2022-09-10T10:01:20Z",  
-    "unitCode": "P1"  
+    "unitCode": "CEL"  
   },  
   "timeliness": {  
     "type": "Property",  
@@ -564,9 +560,9 @@ DataQualityAssessment:
   },  
   "precision": {  
     "type": "Property",  
-    "value": 0.97,  
+    "value": 1.3,  
     "observedAt": "2022-09-10T10:01:20Z",  
-    "unitCode": "P1"  
+    "unitCode": "CEL"  
   },  
   "completeness": {  
     "type": "Property",  
