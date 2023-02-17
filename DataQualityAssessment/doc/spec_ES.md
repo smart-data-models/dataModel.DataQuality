@@ -15,7 +15,7 @@
 ## Lista de propiedades  
 
 <sup><sub>[*] Si no hay un tipo en un atributo es porque puede tener varios tipos o diferentes formatos/patrones</sub></sup>.  
-- `accuracy[number]`: La precisión mide el error numérico sistemático máximo producido en la medición de un sensor  - `address[object]`: La dirección postal  . Model: [https://schema.org/address](https://schema.org/address)- `alternateName[string]`: Un nombre alternativo para este artículo  - `areaServed[string]`: La zona geográfica en la que se presta un servicio o se ofrece un artículo  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: La exhaustividad cuantifica el número de mediciones u observaciones omitidas en una ventana temporal determinada.  - `dataProvider[string]`: Secuencia de caracteres que identifica al proveedor de la entidad de datos armonizada.  - `dateCalculated[string]`: Fecha de la entidad calculada definida por el usuario.  - `dateCreated[string]`: Fecha de creación de la entidad. Normalmente será asignada por la plataforma de almacenamiento.  - `dateModified[string]`: Marca de tiempo de la última modificación de la entidad. Normalmente será asignada por la plataforma de almacenamiento.  - `description[string]`: Descripción de este artículo  - `id[*]`: Identificador único de la entidad  - `location[*]`: Referencia Geojson al elemento. Puede ser Point, LineString, Polygon, MultiPoint, MultiLineString o MultiPolygon.  - `name[string]`: El nombre de este artículo.  - `outlier[object]`: Incluye información sobre las características atípicas de la medición.  - `owner[array]`: Una lista que contiene una secuencia de caracteres codificada en JSON que hace referencia a los identificadores únicos de los propietarios.  - `precision[number]`: La precisión mide la desviación típica de un conjunto de datos. Es decir, mide la proximidad entre los valores del conjunto de datos.  - `seeAlso[*]`: lista de uri que apuntan a recursos adicionales sobre el artículo  - `source[string]`: Secuencia de caracteres que indica la fuente original de los datos de la entidad en forma de URL. Se recomienda que sea el nombre de dominio completo del proveedor de origen o la URL del objeto de origen.  - `synthetic[object]`: Incluye información sobre el origen de la medida.  - `timeliness[number]`: Puntualidad media del flujo de datos  - `type[string]`: Tipo de entidad NGSI. Tiene que ser DataQualityAssessment  <!-- /30-PropertiesList -->  
+- `accuracy[number]`: La precisión mide el error numérico sistemático máximo producido en la medición de un sensor.  - `address[object]`: La dirección postal  . Model: [https://schema.org/address](https://schema.org/address)- `alternateName[string]`: Un nombre alternativo para este artículo  - `areaServed[string]`: La zona geográfica en la que se presta un servicio o se ofrece un artículo  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: La exhaustividad cuantifica el número de mediciones u observaciones omitidas en una ventana temporal determinada.  - `dataProvider[string]`: Secuencia de caracteres que identifica al proveedor de la entidad de datos armonizada.  - `dateCalculated[string]`: Fecha de la entidad calculada definida por el usuario.  - `dateCreated[string]`: Fecha de creación de la entidad. Normalmente será asignada por la plataforma de almacenamiento.  - `dateModified[string]`: Marca de tiempo de la última modificación de la entidad. Normalmente será asignada por la plataforma de almacenamiento.  - `description[string]`: Descripción de este artículo  - `id[*]`: Identificador único de la entidad  - `location[*]`: Referencia Geojson al elemento. Puede ser Point, LineString, Polygon, MultiPoint, MultiLineString o MultiPolygon.  - `name[string]`: El nombre de este artículo.  - `outlier[object]`: Incluye información sobre las características atípicas de la medición.  - `owner[array]`: Una lista que contiene una secuencia de caracteres codificada en JSON que hace referencia a los identificadores únicos de los propietarios.  - `precision[number]`: La precisión mide la desviación estándar de un conjunto de datos. Es decir, mide la proximidad entre los valores del conjunto de datos.  - `seeAlso[*]`: lista de uri que apuntan a recursos adicionales sobre el artículo  - `source[string]`: Secuencia de caracteres que indica la fuente original de los datos de la entidad en forma de URL. Se recomienda que sea el nombre de dominio completo del proveedor de origen o la URL del objeto de origen.  - `synthetic[object]`: Incluye información sobre el origen de la medida.  - `timeliness[number]`: Puntualidad media del flujo de datos  - `type[string]`: Tipo de entidad NGSI. Tiene que ser DataQualityAssessment  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Propiedades requeridas  
 - `id`  - `type`  <!-- /35-RequiredProperties -->  
@@ -375,9 +375,9 @@ DataQualityAssessment:
   x-derived-from: ""    
   x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.DataQuality/blob/master/DataQualityAssessment/LICENSE.md    
-  x-model-schema: https://smart-data-models.github.io/dataModel.DataQualityAssessment/DataQualityAssessment/schema.json    
+  x-model-schema: https://smart-data-models.github.io/dataModel.DataQuality/DataQualityAssessment/schema.json    
   x-model-tags: ""    
-  x-version: 0.0.1    
+  x-version: 0.0.2    
 ```  
 </details>    
 <!-- /60-ModelYaml -->  
@@ -494,7 +494,7 @@ DataQualityAssessment:
   "precision": 1.3,  
   "completeness": 0.5,  
   "@context": [  
-    "https://raw.githubusercontent.com/smart-data-models/dataModel.DataQualityAssessment/master/context.jsonld",  
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.DataQuality/master/context.jsonld",  
     "https://smartdatamodels.org/context.jsonld"  
   ]  
 }  
@@ -571,7 +571,7 @@ DataQualityAssessment:
     "unitCode": "P1"  
   },  
   "@context": [  
-      "https://raw.githubusercontent.com/smart-data-models/dataModel.DataQualityAssessment/master/context.jsonld",  
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.DataQuality/master/context.jsonld",  
       "https://smartdatamodels.org/context.jsonld"  
   ]  
 }  
