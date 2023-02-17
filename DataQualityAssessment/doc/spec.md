@@ -15,7 +15,7 @@
 ## List of properties  
 
 <sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `accuracy[number]`: Accuracy measures the maximum systematic numerical error produced in a sensor measurement  - `address[object]`: The mailing address  . Model: [https://schema.org/address](https://schema.org/address)- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: Completeness quantifies the number of missed measurements or observations in a given time window  - `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity.  - `dateCalculated[string]`: Date of the calculated entity defined by the user.  - `dateCreated[string]`: Entity creation timestamp. This will usually be allocated by the storage platform.  - `dateModified[string]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.  - `description[string]`: A description of this item  - `id[*]`: Unique identifier of the entity  - `location[*]`: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  - `name[string]`: The name of this item.  - `outlier[object]`: Includes information about the outlier characteristics of the measurement.  - `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `precision[number]`: Precision measures the standard deviation of a dataset. That is, it measures how close the values in the dataset are to each other  - `seeAlso[*]`: list of uri pointing to additional resources about the item  - `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.  - `synthetic[object]`: Includes information about the origin of the measurement.  - `timeliness[number]`: Average timeliness of the data-stream  - `type[string]`: NGSI Entity type. It has to be DataQualityAssessment  <!-- /30-PropertiesList -->  
+- `accuracy[number]`: Accuracy measures the maximum systematic numerical error produced in a sensor measurement.  - `address[object]`: The mailing address  . Model: [https://schema.org/address](https://schema.org/address)- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: Completeness quantifies the number of missed measurements or observations in a given time window  - `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity.  - `dateCalculated[string]`: Date of the calculated entity defined by the user.  - `dateCreated[string]`: Entity creation timestamp. This will usually be allocated by the storage platform.  - `dateModified[string]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.  - `description[string]`: A description of this item  - `id[*]`: Unique identifier of the entity  - `location[*]`: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  - `name[string]`: The name of this item.  - `outlier[object]`: Includes information about the outlier characteristics of the measurement.  - `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `precision[number]`: Precision measures the standard deviation of a dataset. That is, it measures how close the values in the dataset are to each other.  - `seeAlso[*]`: list of uri pointing to additional resources about the item  - `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.  - `synthetic[object]`: Includes information about the origin of the measurement.  - `timeliness[number]`: Average timeliness of the data-stream  - `type[string]`: NGSI Entity type. It has to be DataQualityAssessment  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
 - `id`  - `type`  <!-- /35-RequiredProperties -->  
@@ -375,9 +375,9 @@ DataQualityAssessment:
   x-derived-from: ""    
   x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.DataQuality/blob/master/DataQualityAssessment/LICENSE.md    
-  x-model-schema: https://smart-data-models.github.io/dataModel.DataQualityAssessment/DataQualityAssessment/schema.json    
+  x-model-schema: https://smart-data-models.github.io/dataModel.DataQuality/DataQualityAssessment/schema.json    
   x-model-tags: ""    
-  x-version: 0.0.1    
+  x-version: 0.0.2    
 ```  
 </details>    
 <!-- /60-ModelYaml -->  
@@ -494,7 +494,7 @@ DataQualityAssessment:
   "precision": 1.3,  
   "completeness": 0.5,  
   "@context": [  
-    "https://raw.githubusercontent.com/smart-data-models/dataModel.DataQualityAssessment/master/context.jsonld",  
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.DataQuality/master/context.jsonld",  
     "https://smartdatamodels.org/context.jsonld"  
   ]  
 }  
@@ -571,7 +571,7 @@ DataQualityAssessment:
     "unitCode": "P1"  
   },  
   "@context": [  
-      "https://raw.githubusercontent.com/smart-data-models/dataModel.DataQualityAssessment/master/context.jsonld",  
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.DataQuality/master/context.jsonld",  
       "https://smartdatamodels.org/context.jsonld"  
   ]  
 }  
