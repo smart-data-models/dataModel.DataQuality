@@ -19,7 +19,7 @@
   "precision": 1.3,
   "completeness": 0.5,
   "@context": [
-    "https://raw.githubusercontent.com/smart-data-models/dataModel.DataQualityAssessment/master/context.jsonld",
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.DataQuality/master/context.jsonld",
     "https://smartdatamodels.org/context.jsonld"
   ]
 }
