@@ -1,5 +1,6 @@
 {
     "@context": {
+        "DataQualityAssessment": "https://smartdatamodels.org/dataModel.DataQuality/DataQualityAssessment",
         "accuracy": "https://smartdatamodels.org/dataModel.DataQuality/accuracy",
         "address": "https://smartdatamodels.org/address",
         "alternateName": "https://smartdatamodels.org/alternateName",
