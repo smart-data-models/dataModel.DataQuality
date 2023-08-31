@@ -39,7 +39,7 @@
                     "properties": {
                         "isOutlier": {
                             "type": "boolean",
-                            "description": "Property. Determine whether the measurement has been considered an outlier or not."
+                            "description": "Property. Determine whether the measurement has been considered an outlier or not"
                         },
                         "methodology": {
                             "anyOf": [
@@ -56,7 +56,7 @@
                                     "description": "Property. Identifier format of any NGSI entity"
                                 }
                             ],
-                            "description": "Relationship. Reference to the other entity including AI methodology information."
+                            "description": "Relationship. Reference to the other entity including AI methodology information"
                         }
                     }
                 },
@@ -66,7 +66,7 @@
                     "properties": {
                         "isSynthetic": {
                             "type": "boolean",
-                            "description": "Property. Determine whether the measurement has been created synthetically or not."
+                            "description": "Property. Determine whether the measurement has been created synthetically or not"
                         },
                         "methodology": {
                             "anyOf": [
@@ -83,7 +83,7 @@
                                     "description": "Property. Identifier format of any NGSI entity"
                                 }
                             ],
-                            "description": "Relationship. Reference to the other entity including AI methodology information."
+                            "description": "Relationship. Reference to the other entity including AI methodology information"
                         }
                     }
                 },
