@@ -8,7 +8,15 @@
         "addressRegion": "https://smartdatamodels.org/addressRegion",
         "alternateName": "https://smartdatamodels.org/alternateName",
         "areaServed": "https://smartdatamodels.org/areaServed",
+        "bbox": {
+            "@container": "@list",
+            "@id": "geojson:bbox"
+        },
         "completeness": "https://smartdatamodels.org/dataModel.DataQuality/completeness",
+        "coordinates": {
+            "@container": "@list",
+            "@id": "geojson:coordinates"
+        },
         "dataProvider": "https://smartdatamodels.org/dataProvider",
         "dateCalculated": "https://smartdatamodels.org/dataModel.DataQuality/dateCalculated",
         "dateCreated": "https://smartdatamodels.org/dateCreated",
