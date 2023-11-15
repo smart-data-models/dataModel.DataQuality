@@ -12,27 +12,15 @@
   "outlier": {
     "type": "StructuredValue",
     "value": {
-      "isOutlier": {
-        "type": "Boolean",
-        "value": true
-      },
-      "methodology": {
-        "type": "Text",
-        "value": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"
-      }
+      "isOutlier": true,
+      "methodology": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"
     }
   },
   "synthetic": {
     "type": "StructuredValue",
     "value": {
-      "isSynthetic": {
-        "type": "Boolean",
-        "value": false
-      },
-      "methodology": {
-        "type": "Text",
-        "value": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"
-      }
+      "isSynthetic": false,
+      "methodology": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"
     }
   },
   "precision": {
