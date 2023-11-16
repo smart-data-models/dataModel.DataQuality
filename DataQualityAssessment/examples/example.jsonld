@@ -1,16 +1,13 @@
 {
   "id": "urn:ngsi-ld:DataQualityAssessment:Temperature:smartsantander:u7jcfa:f3058",
   "type": "DataQualityAssessment",
-  "dateCalculated": {
-    "@type": "DateTime",
-    "@value": "2022-09-10T10:01:20Z"
-  },
+  "dateCalculated": "2022-09-10T10:01:20Z",
   "source": "https://salted-project.eu",
-  "outlier":{
+  "outlier": {
     "isOutlier": true,
     "methodology": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"
-  },     
-  "synthetic":{
+  },
+  "synthetic": {
     "isSynthetic": false,
     "methodology": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"
   },
