@@ -19,12 +19,25 @@
         "type": "Property",
         "value": true
       },
+      "outlierScore": {
+        "type": "Property",
+        "value": 0.7
+      },
       "methodology": {
         "type": "Relationship",
         "object": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"
       }
     },
     "observedAt": "2022-09-10T10:01:20Z"
+  },
+  "duplicate": {
+    "type": "Property",
+    "value": {
+      "isDuplicate": {
+        "type": "Property",
+        "value": false
+      }
+    }
   },
   "synthetic": {
     "type": "Property",
