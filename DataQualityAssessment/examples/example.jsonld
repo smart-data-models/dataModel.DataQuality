@@ -5,6 +5,7 @@
   "source": "https://salted-project.eu",
   "outlier": {
     "isOutlier": true,
+    "outlierScore": 0.7,
     "methodology": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"
   },
   "synthetic": {
