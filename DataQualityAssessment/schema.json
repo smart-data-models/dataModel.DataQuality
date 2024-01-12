@@ -72,6 +72,13 @@
                             "type": "boolean",
                             "description": "Property: Determine whether the measurement is duplicated or not"
                         }
+                        "foundMatches": {
+                            "type": "array",
+                            "description": "Property: If this is a duplicate, determine measurements it does match with"
+                            "items": {
+                                "type": "string"
+                            },
+                        }
                     }
                 }
                 "synthetic": {
