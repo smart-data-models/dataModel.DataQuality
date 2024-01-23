@@ -20,7 +20,8 @@
   "duplicate": {
     "type": "StructuredValue",
     "value": {
-      "isDuplicate": false
+      "isDuplicate": true,
+      "foundMatches": ["urn:ngsi-ld:DataQualityAssessment:Temperature:smartsantander:u7jcfa:f3062"]
     }
   },
   "synthetic": {
