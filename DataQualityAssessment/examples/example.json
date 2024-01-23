@@ -9,7 +9,9 @@
     "methodology": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"
   },
    "duplicate": {
-    "isDuplicate": false
+    "isDuplicate": true,
+    "foundMatches": ["urn:ngsi-ld:DataQualityAssessment:Temperature:smartsantander:u7jcfa:f3062"
+    ]
   },
   "synthetic": {
     "isSynthetic": false,
