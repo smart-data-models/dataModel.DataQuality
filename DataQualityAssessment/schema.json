@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/schema",
-    "$schemaVersion": "0.0.2",
+    "$schemaVersion": "0.0.3",
     "$id": "https://smart-data-models.github.io/dataModel.DataQuality/DataQualityAssessment/schema.json",
     "title": "Smart Data Models - Data Quality Assessment schema",
     "modelTags": "",
