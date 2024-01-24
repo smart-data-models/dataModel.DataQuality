@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/schema",
-    "$schemaVersion": "0.0.2",
+    "$schemaVersion": "0.0.3",
     "$id": "https://smart-data-models.github.io/dataModel.DataQuality/DataQualityAssessment/schema.json",
     "title": "Smart Data Models - Data Quality Assessment schema",
     "modelTags": "",
@@ -41,6 +41,10 @@
                             "type": "boolean",
                             "description": "Property. Determine whether the measurement has been considered an outlier or not"
                         },
+                        "outlierScore": {
+                            "type": "number",
+                            "description": "Property. A score indicating the degree of outlierness"
+                        },
                         "methodology": {
                             "anyOf": [
                                 {
@@ -60,6 +64,23 @@
                         }
                     }
                 },
+                "duplicate": {
+                    "type": "object",
+                    "description": "Property. Includes information about duplicated data"
+                    "properties": {
+                        "isDuplicate": {
+                            "type": "boolean",
+                            "description": "Property: Determine whether the measurement is duplicated or not"
+                        }
+                        "foundMatches": {
+                            "type": "array",
+                            "description": "Property: If this is a duplicate, determine measurements it does match with"
+                            "items": {
+                                "type": "string"
+                            },
+                        }
+                    }
+                }
                 "synthetic": {
                     "type": "object",
                     "description": "Property. Includes information about the origin of the measurement",

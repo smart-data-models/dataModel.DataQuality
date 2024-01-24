@@ -13,7 +13,15 @@
     "type": "StructuredValue",
     "value": {
       "isOutlier": true,
+      "outlierScore": 0.7
       "methodology": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"
+    }
+  },
+  "duplicate": {
+    "type": "StructuredValue",
+    "value": {
+      "isDuplicate": true,
+      "foundMatches": ["urn:ngsi-ld:DataQualityAssessment:Temperature:smartsantander:u7jcfa:f3062"]
     }
   },
   "synthetic": {
