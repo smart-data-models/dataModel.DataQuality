@@ -66,21 +66,21 @@
                 },
                 "duplicate": {
                     "type": "object",
-                    "description": "Property. Includes information about duplicated data"
+                    "description": "Property. Includes information about duplicated data",
                     "properties": {
                         "isDuplicate": {
                             "type": "boolean",
                             "description": "Property: Determine whether the measurement is duplicated or not"
-                        }
+                        },
                         "foundMatches": {
                             "type": "array",
-                            "description": "Property: If this is a duplicate, determine measurements it does match with"
+                            "description": "Property: If this is a duplicate, determine measurements it does match with",
                             "items": {
                                 "type": "string"
-                            },
+                            }
                         }
                     }
-                }
+                },
                 "synthetic": {
                     "type": "object",
                     "description": "Property. Includes information about the origin of the measurement",
