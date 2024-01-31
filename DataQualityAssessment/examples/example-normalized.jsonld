@@ -36,7 +36,7 @@
       "isDuplicate": {
         "type": "Property",
         "value": true
-      }
+      },
       "foundMatches": {
         "type": "Property",
         "value": ["urn:ngsi-ld:DataQualityAssessment:Temperature:smartsantander:u7jcfa:f3062"
