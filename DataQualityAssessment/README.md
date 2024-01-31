@@ -1,6 +1,6 @@
 [![Smart Data Models](https://smartdatamodels.org/wp-content/uploads/2022/01/SmartDataModels_logo.png "Logo")](https://smartdatamodels.org)
 # DataQualityAssessment
-Version: 0.0.2
+Version: 0.0.3
 
 ## Description 
 
@@ -37,8 +37,6 @@ Link to the [example](https://smart-data-models.github.io/dataModel.DataQuality/
 Link to the [example](https://github.com/smart-data-models/dataModel.DataQuality/blob/master/DataQualityAssessment/examples/example.json.csv) (keyvalues) for NGSI v2 in CSV format
 
 Link to the [example](https://github.com/smart-data-models/dataModel.DataQuality/blob/master/DataQualityAssessment/examples/example.jsonld.csv) (keyvalues) for NGSI-LD in CSV format
-
-Link to the [example](https://github.com/smart-data-models/dataModel.DataQuality/blob/master/DataQualityAssessment/examples/example-normalized.json.csv) (normalized) for NGSI-V2 in CSV format
 
 Link to the [example](https://github.com/smart-data-models/dataModel.DataQuality/blob/master/DataQualityAssessment/examples/example-normalized.jsonld.csv) (normalized) for NGSI-LD in CSV format
 ### Dynamic Examples generation

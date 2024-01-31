@@ -106,6 +106,20 @@ DataQualityAssessment:
       type: string
       x-ngsi:
         type: Property
+    duplicate:
+      description: Includes information about duplicated data
+      properties:
+        foundMatches:
+          description: 'Property: If this is a duplicate, determine measurements it does match with'
+          items:
+            type: string
+          type: array
+        isDuplicate:
+          description: 'Property: Determine whether the measurement is duplicated or not'
+          type: boolean
+      type: object
+      x-ngsi:
+        type: Property
     id:
       anyOf:
         - description: Identifier format of any NGSI entity
@@ -318,6 +332,11 @@ DataQualityAssessment:
           description: Reference to the other entity including AI methodology information
           x-ngsi:
             type: Relationship
+        outlierScore:
+          description: A score indicating the degree of outlierness
+          type: number
+          x-ngsi:
+            type: Property
       type: object
       x-ngsi:
         type: Property
@@ -411,8 +430,8 @@ DataQualityAssessment:
     - type
   type: object
   x-derived-from: ""
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2023 Contributors to Smart Data Models Program'
   x-license-url: https://github.com/smart-data-models/dataModel.DataQuality/blob/master/DataQualityAssessment/LICENSE.md
   x-model-schema: https://smart-data-models.github.io/dataModel.DataQuality/DataQualityAssessment/schema.json
   x-model-tags: ""
-  x-version: 0.0.2
+  x-version: 0.0.3
