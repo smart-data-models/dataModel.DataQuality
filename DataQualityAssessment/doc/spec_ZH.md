@@ -8,7 +8,7 @@
 <!-- /15-License -->  
 <!-- 20-Description -->  
 全局描述：**该实体描述测量数据（如温度）的数据质量属性。  
-版本： 0.0.2  
+版本： 0.0.4  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
 
@@ -23,8 +23,11 @@
 	- `postalCode[string]`: 邮政编码。例如：24004  . Model: [https://schema.org/https://schema.org/postalCode](https://schema.org/https://schema.org/postalCode)  
 	- `streetAddress[string]`: 街道地址  . Model: [https://schema.org/streetAddress](https://schema.org/streetAddress)  
 	- `streetNr[string]`: 标识公共街道上特定房产的编号    
-- `alternateName[string]`: 该项目的替代名称  - `areaServed[string]`: 提供服务或提供物品的地理区域  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: 完整性量化了特定时间窗口内遗漏的测量或观测数据的数量  - `dataProvider[string]`: 标识统一数据实体提供者的字符序列  - `dateCalculated[date-time]`: 用户定义的计算实体的日期  - `dateCreated[date-time]`: 实体创建时间戳。通常由存储平台分配  - `dateModified[date-time]`: 实体最后一次修改的时间戳。通常由存储平台分配  - `description[string]`: 项目描述  - `id[*]`: 实体的唯一标识符  - `location[*]`: 项目的 Geojson 引用。它可以是点、线条字符串、多边形、多点、多线条字符串或多多边形  - `name[string]`: 该项目的名称  - `outlier[object]`: 包括测量的离群特征信息  	- `isOutlier[boolean]`: 确定测量结果是否被视为离群值    
+- `alternateName[string]`: 该项目的替代名称  - `areaServed[string]`: 提供服务或提供物品的地理区域  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: 完整性量化了特定时间窗口内遗漏的测量或观测数据的数量  - `dataProvider[string]`: 标识统一数据实体提供者的字符序列  - `dateCalculated[date-time]`: 用户定义的计算实体的日期  - `dateCreated[date-time]`: 实体创建时间戳。通常由存储平台分配  - `dateModified[date-time]`: 实体最后一次修改的时间戳。通常由存储平台分配  - `description[string]`: 项目描述  - `duplicate[object]`: 包括有关重复数据的信息  	- `foundMatches[array]`: 如果是重复的，请确定测量值是否与以下内容相匹配    
+	- `isDuplicate[boolean]`: 确定测量是否重复    
+- `id[*]`: 实体的唯一标识符  - `location[*]`: 项目的 Geojson 引用。它可以是点、线条字符串、多边形、多点、多线条字符串或多多边形  - `name[string]`: 该项目的名称  - `outlier[object]`: 包括测量的离群特征信息  	- `isOutlier[boolean]`: 确定测量结果是否被视为离群值    
 	- `methodology[*]`: 提及其他实体，包括人工智能方法信息    
+	- `outlierScore[number]`: 表示离群程度的分数    
 - `owner[array]`: 包含一个 JSON 编码字符序列的列表，其中引用了所有者的唯一 Ids  - `precision[number]`: 精度衡量数据集的标准偏差。也就是说，它衡量数据集中各值之间的接近程度  - `seeAlso[*]`: 指向有关该项目的其他资源的 uri 列表  - `source[string]`: 以 URL 形式给出实体数据原始来源的字符串。建议使用源提供者的完全合格域名或源对象的 URL  - `synthetic[object]`: 包括测量来源的信息  	- `isSynthetic[boolean]`: 确定测量结果是否是合成的    
 	- `methodology[*]`: 提及其他实体，包括人工智能方法信息    
 - `timeliness[number]`: 数据流的平均及时性  - `type[string]`: NGSI 实体类型。必须是 DataQualityAssessment  <!-- /30-PropertiesList -->  
@@ -152,13 +155,20 @@ DataQualityAssessment:
       description: Includes information about duplicated data    
       properties:    
         foundMatches:    
-          description: 'Property: If this is a duplicate, determine measurements it does match with'    
+          description: 'If this is a duplicate, determine measurements it does match with'    
           items:    
+            description: Every match found in the data    
             type: string    
+            x-ngsi:    
+              type: Property    
           type: array    
+          x-ngsi:    
+            type: Property    
         isDuplicate:    
-          description: 'Property: Determine whether the measurement is duplicated or not'    
+          description: Determine whether the measurement is duplicated or not    
           type: boolean    
+          x-ngsi:    
+            type: Property    
       type: object    
       x-ngsi:    
         type: Property    
@@ -472,11 +482,11 @@ DataQualityAssessment:
     - type    
   type: object    
   x-derived-from: ""    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2023 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2024 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.DataQuality/blob/master/DataQualityAssessment/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.DataQuality/DataQualityAssessment/schema.json    
   x-model-tags: ""    
-  x-version: 0.0.3    
+  x-version: 0.0.4    
 ```  
 </details>    
 <!-- /60-ModelYaml -->  
@@ -495,7 +505,7 @@ DataQualityAssessment:
   "source": "https://salted-project.eu",  
   "outlier": {  
     "isOutlier": true,  
-    "outlierScore": 0.7  
+    "outlierScore": 0.7,  
     "methodology": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"  
   },  
    "duplicate": {  
@@ -533,7 +543,7 @@ DataQualityAssessment:
     "type": "StructuredValue",  
     "value": {  
       "isOutlier": true,  
-      "outlierScore": 0.7  
+      "outlierScore": 0.7,  
       "methodology": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"  
     }  
   },  
@@ -646,7 +656,7 @@ DataQualityAssessment:
       "isDuplicate": {  
         "type": "Property",  
         "value": true  
-      }  
+      },  
       "foundMatches": {  
         "type": "Property",  
         "value": ["urn:ngsi-ld:DataQualityAssessment:Temperature:smartsantander:u7jcfa:f3062"  
