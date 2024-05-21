@@ -8,7 +8,7 @@
 <!-- /15-License -->  
 <!-- 20-Description -->  
 Global description: **This entity describes the data quality properties of a measurement, such as temperature.**  
-version: 0.0.2  
+version: 0.0.3  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
 
@@ -23,8 +23,11 @@
 	- `postalCode[string]`: The postal code. For example, 24004  . Model: [https://schema.org/https://schema.org/postalCode](https://schema.org/https://schema.org/postalCode)  
 	- `streetAddress[string]`: The street address  . Model: [https://schema.org/streetAddress](https://schema.org/streetAddress)  
 	- `streetNr[string]`: Number identifying a specific property on a public street    
-- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: Completeness quantifies the number of missed measurements or observations in a given time window  - `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  - `dateCalculated[date-time]`: Date of the calculated entity defined by the user  - `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  - `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  - `description[string]`: A description of this item  - `id[*]`: Unique identifier of the entity  - `location[*]`: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  - `name[string]`: The name of this item  - `outlier[object]`: Includes information about the outlier characteristics of the measurement  	- `isOutlier[boolean]`: Determine whether the measurement has been considered an outlier or not    
+- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: Completeness quantifies the number of missed measurements or observations in a given time window  - `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  - `dateCalculated[date-time]`: Date of the calculated entity defined by the user  - `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  - `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  - `description[string]`: A description of this item  - `duplicate[object]`: Includes information about duplicated data  	- `foundMatches[array]`: Property: If this is a duplicate, determine measurements it does match with    
+	- `isDuplicate[boolean]`: Property: Determine whether the measurement is duplicated or not    
+- `id[*]`: Unique identifier of the entity  - `location[*]`: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  - `name[string]`: The name of this item  - `outlier[object]`: Includes information about the outlier characteristics of the measurement  	- `isOutlier[boolean]`: Determine whether the measurement has been considered an outlier or not    
 	- `methodology[*]`: Reference to the other entity including AI methodology information    
+	- `outlierScore[number]`: A score indicating the degree of outlierness    
 - `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `precision[number]`: Precision measures the standard deviation of a dataset. That is, it measures how close the values in the dataset are to each other  - `seeAlso[*]`: list of uri pointing to additional resources about the item  - `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  - `synthetic[object]`: Includes information about the origin of the measurement  	- `isSynthetic[boolean]`: Determine whether the measurement has been created synthetically or not    
 	- `methodology[*]`: Reference to the other entity including AI methodology information    
 - `timeliness[number]`: Average timeliness of the data-stream  - `type[string]`: NGSI Entity type. It has to be DataQualityAssessment  <!-- /30-PropertiesList -->  
@@ -152,13 +155,20 @@ DataQualityAssessment:
       description: Includes information about duplicated data    
       properties:    
         foundMatches:    
-          description: 'Property: If this is a duplicate, determine measurements it does match with'    
+          description: 'If this is a duplicate, determine measurements it does match with'    
           items:    
+            description: Every match found in the data    
             type: string    
+            x-ngsi:    
+              type: Property    
           type: array    
+          x-ngsi:    
+            type: Property    
         isDuplicate:    
-          description: 'Property: Determine whether the measurement is duplicated or not'    
+          description: Determine whether the measurement is duplicated or not    
           type: boolean    
+          x-ngsi:    
+            type: Property    
       type: object    
       x-ngsi:    
         type: Property    
@@ -472,11 +482,11 @@ DataQualityAssessment:
     - type    
   type: object    
   x-derived-from: ""    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2023 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2024 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.DataQuality/blob/master/DataQualityAssessment/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.DataQuality/DataQualityAssessment/schema.json    
   x-model-tags: ""    
-  x-version: 0.0.3    
+  x-version: 0.0.4    
 ```  
 </details>    
 <!-- /60-ModelYaml -->  
@@ -495,7 +505,7 @@ DataQualityAssessment:
   "source": "https://salted-project.eu",  
   "outlier": {  
     "isOutlier": true,  
-    "outlierScore": 0.7  
+    "outlierScore": 0.7,  
     "methodology": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"  
   },  
    "duplicate": {  
@@ -533,7 +543,7 @@ DataQualityAssessment:
     "type": "StructuredValue",  
     "value": {  
       "isOutlier": true,  
-      "outlierScore": 0.7  
+      "outlierScore": 0.7,  
       "methodology": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"  
     }  
   },  
@@ -646,7 +656,7 @@ DataQualityAssessment:
       "isDuplicate": {  
         "type": "Property",  
         "value": true  
-      }  
+      },  
       "foundMatches": {  
         "type": "Property",  
         "value": ["urn:ngsi-ld:DataQualityAssessment:Temperature:smartsantander:u7jcfa:f3062"  
