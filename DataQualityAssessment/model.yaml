@@ -110,13 +110,20 @@ DataQualityAssessment:
       description: Includes information about duplicated data
       properties:
         foundMatches:
-          description: 'Property: If this is a duplicate, determine measurements it does match with'
+          description: 'If this is a duplicate, determine measurements it does match with'
           items:
+            description: Every match found in the data
             type: string
+            x-ngsi:
+              type: Property
           type: array
+          x-ngsi:
+            type: Property
         isDuplicate:
-          description: 'Property: Determine whether the measurement is duplicated or not'
+          description: Determine whether the measurement is duplicated or not
           type: boolean
+          x-ngsi:
+            type: Property
       type: object
       x-ngsi:
         type: Property
@@ -430,8 +437,8 @@ DataQualityAssessment:
     - type
   type: object
   x-derived-from: ""
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2023 Contributors to Smart Data Models Program'
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2024 Contributors to Smart Data Models Program'
   x-license-url: https://github.com/smart-data-models/dataModel.DataQuality/blob/master/DataQualityAssessment/LICENSE.md
   x-model-schema: https://smart-data-models.github.io/dataModel.DataQuality/DataQualityAssessment/schema.json
   x-model-tags: ""
-  x-version: 0.0.3
+  x-version: 0.0.4
