@@ -8,7 +8,7 @@
 <!-- /15-License -->  
 <!-- 20-Description -->  
 Globale Beschreibung: **Diese Einheit beschreibt die Datenqualitätseigenschaften einer Messung, z. B. der Temperatur**.  
-Version: 0.0.2  
+Version: 0.0.4  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
 
@@ -23,8 +23,11 @@
 	- `postalCode[string]`: Die Postleitzahl. Zum Beispiel, 24004  . Model: [https://schema.org/https://schema.org/postalCode](https://schema.org/https://schema.org/postalCode)  
 	- `streetAddress[string]`: Die Straßenanschrift  . Model: [https://schema.org/streetAddress](https://schema.org/streetAddress)  
 	- `streetNr[string]`: Nummer zur Identifizierung eines bestimmten Grundstücks an einer öffentlichen Straße    
-- `alternateName[string]`: Ein alternativer Name für diesen Artikel  - `areaServed[string]`: Das geografische Gebiet, in dem eine Dienstleistung oder ein angebotener Artikel erbracht wird  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: Die Vollständigkeit quantifiziert die Anzahl der fehlenden Messungen oder Beobachtungen in einem bestimmten Zeitfenster.  - `dataProvider[string]`: Eine Folge von Zeichen zur Identifizierung des Anbieters der harmonisierten Dateneinheit  - `dateCalculated[date-time]`: Datum der vom Benutzer definierten berechneten Einheit  - `dateCreated[date-time]`: Zeitstempel der Entitätserstellung. Dieser wird normalerweise von der Speicherplattform zugewiesen  - `dateModified[date-time]`: Zeitstempel der letzten Änderung der Entität. Dieser wird in der Regel von der Speicherplattform vergeben  - `description[string]`: Eine Beschreibung dieses Artikels  - `id[*]`: Eindeutiger Bezeichner der Entität  - `location[*]`: Geojson-Referenz auf das Element. Es kann Punkt, LineString, Polygon, MultiPoint, MultiLineString oder MultiPolygon sein  - `name[string]`: Der Name dieses Artikels  - `outlier[object]`: Enthält Informationen über die Ausreißereigenschaften der Messung  	- `isOutlier[boolean]`: Feststellen, ob die Messung als Ausreißer eingestuft wurde oder nicht    
+- `alternateName[string]`: Ein alternativer Name für diesen Artikel  - `areaServed[string]`: Das geografische Gebiet, in dem eine Dienstleistung oder ein angebotener Artikel erbracht wird  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: Die Vollständigkeit quantifiziert die Anzahl der fehlenden Messungen oder Beobachtungen in einem bestimmten Zeitfenster.  - `dataProvider[string]`: Eine Folge von Zeichen zur Identifizierung des Anbieters der harmonisierten Dateneinheit  - `dateCalculated[date-time]`: Datum der vom Benutzer definierten berechneten Einheit  - `dateCreated[date-time]`: Zeitstempel der Entitätserstellung. Dieser wird normalerweise von der Speicherplattform zugewiesen  - `dateModified[date-time]`: Zeitstempel der letzten Änderung der Entität. Dieser wird in der Regel von der Speicherplattform vergeben  - `description[string]`: Eine Beschreibung dieses Artikels  - `duplicate[object]`: Enthält Informationen über duplizierte Daten  	- `foundMatches[array]`: Wenn es sich um ein Duplikat handelt, bestimmen Sie die Messungen, die mit    
+	- `isDuplicate[boolean]`: Feststellen, ob die Messung dupliziert ist oder nicht    
+- `id[*]`: Eindeutiger Bezeichner der Entität  - `location[*]`: Geojson-Referenz auf das Element. Es kann Punkt, LineString, Polygon, MultiPoint, MultiLineString oder MultiPolygon sein  - `name[string]`: Der Name dieses Artikels  - `outlier[object]`: Enthält Informationen über die Ausreißereigenschaften der Messung  	- `isOutlier[boolean]`: Feststellen, ob die Messung als Ausreißer eingestuft wurde oder nicht    
 	- `methodology[*]`: Verweis auf die andere Einrichtung einschließlich Informationen zur AI-Methodik    
+	- `outlierScore[number]`: Eine Punktzahl, die den Grad der Ausgeschlossenheit angibt    
 - `owner[array]`: Eine Liste mit einer JSON-kodierten Zeichenfolge, die auf die eindeutigen Kennungen der Eigentümer verweist  - `precision[number]`: Die Präzision misst die Standardabweichung eines Datensatzes. Das heißt, sie misst, wie nahe die Werte im Datensatz beieinander liegen  - `seeAlso[*]`: Liste von URLs, die auf zusätzliche Ressourcen zu dem Artikel verweisen  - `source[string]`: Eine Folge von Zeichen, die die ursprüngliche Quelle der Entitätsdaten als URL angibt. Empfohlen wird der voll qualifizierte Domänenname des Quellanbieters oder die URL des Quellobjekts.  - `synthetic[object]`: Enthält Informationen über den Ursprung der Messung  	- `isSynthetic[boolean]`: Feststellen, ob die Messung synthetisch erstellt wurde oder nicht    
 	- `methodology[*]`: Verweis auf die andere Einrichtung einschließlich Informationen zur AI-Methodik    
 - `timeliness[number]`: Durchschnittliche Aktualität des Datenstroms  - `type[string]`: NGSI-Entitätstyp. Es muss DataQualityAssessment sein  <!-- /30-PropertiesList -->  
@@ -152,13 +155,20 @@ DataQualityAssessment:
       description: Includes information about duplicated data    
       properties:    
         foundMatches:    
-          description: 'Property: If this is a duplicate, determine measurements it does match with'    
+          description: 'If this is a duplicate, determine measurements it does match with'    
           items:    
+            description: Every match found in the data    
             type: string    
+            x-ngsi:    
+              type: Property    
           type: array    
+          x-ngsi:    
+            type: Property    
         isDuplicate:    
-          description: 'Property: Determine whether the measurement is duplicated or not'    
+          description: Determine whether the measurement is duplicated or not    
           type: boolean    
+          x-ngsi:    
+            type: Property    
       type: object    
       x-ngsi:    
         type: Property    
@@ -472,11 +482,11 @@ DataQualityAssessment:
     - type    
   type: object    
   x-derived-from: ""    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2023 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2024 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.DataQuality/blob/master/DataQualityAssessment/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.DataQuality/DataQualityAssessment/schema.json    
   x-model-tags: ""    
-  x-version: 0.0.3    
+  x-version: 0.0.4    
 ```  
 </details>    
 <!-- /60-ModelYaml -->  
@@ -485,7 +495,7 @@ DataQualityAssessment:
 <!-- 80-Examples -->  
 ## Beispiel-Nutzlasten  
 #### DataQualityAssessment NGSI-v2 key-values Beispiel  
-Hier ist ein Beispiel für ein DataQualityAssessment im JSON-LD-Format als Key-Values. Dies ist mit NGSI-v2 kompatibel, wenn `options=keyValues` verwendet wird und liefert die Kontextdaten einer einzelnen Entität.  
+Hier ist ein Beispiel für ein DataQualityAssessment im JSON-LD-Format als Key-Values. Dies ist kompatibel mit NGSI-v2, wenn `options=keyValues` verwendet wird und liefert die Kontextdaten einer einzelnen Entität.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -495,7 +505,7 @@ DataQualityAssessment:
   "source": "https://salted-project.eu",  
   "outlier": {  
     "isOutlier": true,  
-    "outlierScore": 0.7  
+    "outlierScore": 0.7,  
     "methodology": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"  
   },  
    "duplicate": {  
@@ -533,7 +543,7 @@ DataQualityAssessment:
     "type": "StructuredValue",  
     "value": {  
       "isOutlier": true,  
-      "outlierScore": 0.7  
+      "outlierScore": 0.7,  
       "methodology": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"  
     }  
   },  
@@ -570,7 +580,7 @@ DataQualityAssessment:
 }  
 ```  
 </details>  
-#### DataQualityAssessment NGSI-LD key-values Beispiel  
+#### DataQualityAssessment NGSI-LD Schlüsselwerte Beispiel  
 Hier ist ein Beispiel für ein DataQualityAssessment im JSON-LD-Format als Key-Values. Dies ist mit NGSI-LD kompatibel, wenn `options=keyValues` verwendet wird und liefert die Kontextdaten einer einzelnen Entität.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
@@ -646,7 +656,7 @@ DataQualityAssessment:
       "isDuplicate": {  
         "type": "Property",  
         "value": true  
-      }  
+      },  
       "foundMatches": {  
         "type": "Property",  
         "value": ["urn:ngsi-ld:DataQualityAssessment:Temperature:smartsantander:u7jcfa:f3062"  
