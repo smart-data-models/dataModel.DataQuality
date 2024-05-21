@@ -8,7 +8,7 @@
 <!-- /15-License -->  
 <!-- 20-Description -->  
 Descripción global: **Esta entidad describe las propiedades de calidad de los datos de una medición, como la temperatura.**  
-versión: 0.0.2  
+versión: 0.0.4  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
 
@@ -23,8 +23,11 @@
 	- `postalCode[string]`: El código postal. Por ejemplo, 24004  . Model: [https://schema.org/https://schema.org/postalCode](https://schema.org/https://schema.org/postalCode)  
 	- `streetAddress[string]`: La dirección  . Model: [https://schema.org/streetAddress](https://schema.org/streetAddress)  
 	- `streetNr[string]`: Número que identifica una propiedad específica en una vía pública    
-- `alternateName[string]`: Un nombre alternativo para este artículo  - `areaServed[string]`: La zona geográfica en la que se presta un servicio o se ofrece un artículo  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: La exhaustividad cuantifica el número de mediciones u observaciones omitidas en una ventana temporal determinada.  - `dataProvider[string]`: Una secuencia de caracteres que identifica al proveedor de la entidad de datos armonizada  - `dateCalculated[date-time]`: Fecha de la entidad calculada definida por el usuario  - `dateCreated[date-time]`: Fecha de creación de la entidad. Normalmente será asignada por la plataforma de almacenamiento  - `dateModified[date-time]`: Marca de tiempo de la última modificación de la entidad. Suele ser asignada por la plataforma de almacenamiento  - `description[string]`: Descripción de este artículo  - `id[*]`: Identificador único de la entidad  - `location[*]`: Referencia Geojson al elemento. Puede ser Point, LineString, Polygon, MultiPoint, MultiLineString o MultiPolygon.  - `name[string]`: El nombre de este artículo  - `outlier[object]`: Incluye información sobre las características atípicas de la medición  	- `isOutlier[boolean]`: Determinar si la medición se ha considerado un valor atípico o no.    
+- `alternateName[string]`: Un nombre alternativo para este artículo  - `areaServed[string]`: La zona geográfica en la que se presta un servicio o se ofrece un artículo  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: La exhaustividad cuantifica el número de mediciones u observaciones omitidas en una ventana temporal determinada.  - `dataProvider[string]`: Una secuencia de caracteres que identifica al proveedor de la entidad de datos armonizada  - `dateCalculated[date-time]`: Fecha de la entidad calculada definida por el usuario  - `dateCreated[date-time]`: Fecha de creación de la entidad. Normalmente será asignada por la plataforma de almacenamiento  - `dateModified[date-time]`: Marca de tiempo de la última modificación de la entidad. Suele ser asignada por la plataforma de almacenamiento  - `description[string]`: Descripción de este artículo  - `duplicate[object]`: Incluye información sobre datos duplicados  	- `foundMatches[array]`: Si se trata de un duplicado, determinar las medidas que coincide con    
+	- `isDuplicate[boolean]`: Determinar si la medida está duplicada o no    
+- `id[*]`: Identificador único de la entidad  - `location[*]`: Referencia Geojson al elemento. Puede ser Point, LineString, Polygon, MultiPoint, MultiLineString o MultiPolygon.  - `name[string]`: El nombre de este artículo  - `outlier[object]`: Incluye información sobre las características atípicas de la medición  	- `isOutlier[boolean]`: Determinar si la medición se ha considerado un valor atípico o no.    
 	- `methodology[*]`: Referencia a la otra entidad, incluida la información sobre la metodología de la IA    
+	- `outlierScore[number]`: Una puntuación que indica el grado de outlierness    
 - `owner[array]`: Una lista que contiene una secuencia de caracteres codificada en JSON que hace referencia a los identificadores únicos de los propietarios.  - `precision[number]`: La precisión mide la desviación típica de un conjunto de datos. Es decir, mide la proximidad entre los valores del conjunto de datos.  - `seeAlso[*]`: lista de uri que apuntan a recursos adicionales sobre el artículo  - `source[string]`: Secuencia de caracteres que indica la fuente original de los datos de la entidad en forma de URL. Se recomienda que sea el nombre de dominio completo del proveedor de origen o la URL del objeto de origen.  - `synthetic[object]`: Incluye información sobre el origen de la medición  	- `isSynthetic[boolean]`: Determinar si la medida se ha creado sintéticamente o no.    
 	- `methodology[*]`: Referencia a la otra entidad, incluida la información sobre la metodología de la IA    
 - `timeliness[number]`: Puntualidad media del flujo de datos  - `type[string]`: Tipo de entidad NGSI. Tiene que ser DataQualityAssessment  <!-- /30-PropertiesList -->  
@@ -152,13 +155,20 @@ DataQualityAssessment:
       description: Includes information about duplicated data    
       properties:    
         foundMatches:    
-          description: 'Property: If this is a duplicate, determine measurements it does match with'    
+          description: 'If this is a duplicate, determine measurements it does match with'    
           items:    
+            description: Every match found in the data    
             type: string    
+            x-ngsi:    
+              type: Property    
           type: array    
+          x-ngsi:    
+            type: Property    
         isDuplicate:    
-          description: 'Property: Determine whether the measurement is duplicated or not'    
+          description: Determine whether the measurement is duplicated or not    
           type: boolean    
+          x-ngsi:    
+            type: Property    
       type: object    
       x-ngsi:    
         type: Property    
@@ -472,11 +482,11 @@ DataQualityAssessment:
     - type    
   type: object    
   x-derived-from: ""    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2023 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2024 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.DataQuality/blob/master/DataQualityAssessment/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.DataQuality/DataQualityAssessment/schema.json    
   x-model-tags: ""    
-  x-version: 0.0.3    
+  x-version: 0.0.4    
 ```  
 </details>    
 <!-- /60-ModelYaml -->  
@@ -495,7 +505,7 @@ DataQualityAssessment:
   "source": "https://salted-project.eu",  
   "outlier": {  
     "isOutlier": true,  
-    "outlierScore": 0.7  
+    "outlierScore": 0.7,  
     "methodology": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"  
   },  
    "duplicate": {  
@@ -533,7 +543,7 @@ DataQualityAssessment:
     "type": "StructuredValue",  
     "value": {  
       "isOutlier": true,  
-      "outlierScore": 0.7  
+      "outlierScore": 0.7,  
       "methodology": "urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058"  
     }  
   },  
@@ -646,7 +656,7 @@ DataQualityAssessment:
       "isDuplicate": {  
         "type": "Property",  
         "value": true  
-      }  
+      },  
       "foundMatches": {  
         "type": "Property",  
         "value": ["urn:ngsi-ld:DataQualityAssessment:Temperature:smartsantander:u7jcfa:f3062"  
