@@ -24,31 +24,36 @@
 #         curl -X GET http://localhost:1026/ngsi-ld/v1/entities?local=true&limit=1000
 #         
 #         # now the python code you can use to insert some value in the context broker according to the data model
+#         # Version Warning! 
+#         # This code is designed to work with the version 0.8 of pysmartdatamodels or later
+#         # to work with earlier version you need to replace the import instruction for
+#         # from pysmartdatamodels import pysmartdatamodels as sdm
 #         
-from pysmartdatamodels import pysmartdatamodels as sdm
+#         
+import pysmartdatamodels as sdm
 import subprocess
 serverUrl = "http://localhost:1026" # supposed that your broker is installed in localhost. Edit to match your configuration
 dataModel = "DataQualityAssessment"
 subject = "dataModel.DataQuality"
-dateCalculated = "{'type': 'Property', 'value': {'@type': 'DateTime', '@value': '2022-09-10T10:01:20Z'}}"
+dateCalculated = "2022-09-10T10:01:20Z"
 attribute = "dateCalculated"
 value = dateCalculated
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-outlier = {'type': 'Property', 'value': {'isOutlier': {'type': 'Property', 'value': True}, 'outlierScore': {'type': 'Property', 'value': 0.7}, 'methodology': {'type': 'Relationship', 'object': 'urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058'}}, 'observedAt': '2022-09-10T10:01:20Z'}
+outlier = {'isOutlier': True, 'outlierScore': 0.7, 'methodology': 'urn:ngsi-ld:AI-Methodology:Outlier:Temperature:smartsantander:u7jcfa:f3058'}
 attribute = "outlier"
 value = outlier
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-duplicate = {'type': 'Property', 'value': {'isDuplicate': {'type': 'Property', 'value': True}, 'foundMatches': {'type': 'Property', 'value': ['urn:ngsi-ld:DataQualityAssessment:Temperature:smartsantander:u7jcfa:f3062']}}}
+duplicate = {'isDuplicate': True, 'foundMatches': ['urn:ngsi-ld:DataQualityAssessment:Temperature:smartsantander:u7jcfa:f3062']}
 attribute = "duplicate"
 value = duplicate
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-synthetic = {'type': 'Property', 'value': {'isSynthetic': {'type': 'Property', 'value': False}, 'methodology': {'type': 'Relationship', 'object': 'urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058'}}, 'observedAt': '2022-09-10T10:01:20Z'}
+synthetic = {'isSynthetic': False, 'methodology': 'urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058'}
 attribute = "synthetic"
 value = synthetic
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
