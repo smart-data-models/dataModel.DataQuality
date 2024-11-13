@@ -126,6 +126,64 @@
         "precision": {
           "type": "number",
           "description": "Property. Precision measures the standard deviation of a dataset. That is, it measures how close the values in the dataset are to each other"
+        },
+        "dataQualityAssessmentVariableNames": {
+          "type": "array",
+          "description": "Array of variable names used to describe the values for each dataQualityAssessmentDomain property",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dataQualityAssessmentDomains": {
+          "type": "object",
+          "description": "Data quality assessment domains with their respective scores",
+          "properties": {
+            "completeness": {
+              "type": "array",
+              "description": "Completeness scores for variables",
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "consistency": {
+              "type": "array",
+              "description": "Consistency scores for variables",
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "timeliness": {
+              "type": "array",
+              "description": "Timeliness scores for variables",
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "uniqueness": {
+              "type": "array",
+              "description": "Uniqueness scores for variables",
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "validity": {
+              "type": "array",
+              "description": "Validity scores for variables",
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          }
         }
       }
     }
