@@ -17,6 +17,27 @@
     "isSynthetic": false,
     "methodology": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"
   },
+  "dataQualityAssessmentDomains": {
+      "completeness":[1,1,1,1,1,1,1,0.9865,1,1,0.9595,0.9595],
+      "consistency":[1,1,1,1,1,1,1,1,1,1,1,1],
+      "timeliness": [0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9211,0.9342,0.9342,0.8947,0.8947],
+      "uniqueness": [1,1,1,1,1,1,1,1,1,1,1,1],
+      "validity": [1,1,1,1,1,1,1,1,1,1,1,1]
+  },
+  "dataQualityAssessmentVariableNames": [
+      "dataProvider",
+      "dateObserved",
+      "entityId",
+      "location.coordinates.0",
+      "location.coordinates.1",
+      "location.type",
+      "precipitation",
+      "relativeHumidity",
+      "temperature",
+      "entityType",
+      "windDirection",
+      "windSpeed"
+  ],
   "accuracy": 0.25,
   "timeliness": 3,
   "precision": 1.3,
