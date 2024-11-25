@@ -131,7 +131,8 @@
           "type": "array",
           "description": "Array of variable names used to describe the values for each dataQualityAssessmentDomain property",
           "items": {
-            "type": "string"
+            "type": "string",
+            "description": "Property. Every item in the variable names array"
           }
         },
         "dataQualityAssessmentDomains": {
@@ -143,6 +144,7 @@
               "description": "Completeness scores for variables",
               "items": {
                 "type": "number",
+                "description": "Property. Every item in the completeness array",
                 "minimum": 0,
                 "maximum": 1
               }
@@ -152,6 +154,7 @@
               "description": "Consistency scores for variables",
               "items": {
                 "type": "number",
+                "description": "Property. Every item in the consistency array",
                 "minimum": 0,
                 "maximum": 1
               }
@@ -161,6 +164,7 @@
               "description": "Timeliness scores for variables",
               "items": {
                 "type": "number",
+                "description": "Property. Every item in the timeliness array",
                 "minimum": 0,
                 "maximum": 1
               }
@@ -170,6 +174,7 @@
               "description": "Uniqueness scores for variables",
               "items": {
                 "type": "number",
+                "description": "Property. Every item in the uniqueness array",
                 "minimum": 0,
                 "maximum": 1
               }
@@ -179,6 +184,7 @@
               "description": "Validity scores for variables",
               "items": {
                 "type": "number",
+                "description": "Property. Every item in the validity array",
                 "minimum": 0,
                 "maximum": 1
               }
