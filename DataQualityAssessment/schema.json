@@ -126,6 +126,70 @@
         "precision": {
           "type": "number",
           "description": "Property. Precision measures the standard deviation of a dataset. That is, it measures how close the values in the dataset are to each other"
+        },
+        "dataQualityAssessmentVariableNames": {
+          "type": "array",
+          "description": "Relationship. Array of variable names used to describe the values for each dataQualityAssessmentDomain property",
+          "items": {
+            "type": "string",
+            "description": "Property. Every item in the variable names array"
+          }
+        },
+        "dataQualityAssessmentDomains": {
+          "type": "object",
+          "description": "Property. Data quality assessment domains with their respective scores",
+          "properties": {
+            "completeness": {
+              "type": "array",
+              "description": "Property. Completeness scores for variables",
+              "items": {
+                "type": "number",
+                "description": "Property. Every item in the completeness array",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "consistency": {
+              "type": "array",
+              "description": "Property. Consistency scores for variables",
+              "items": {
+                "type": "number",
+                "description": "Property. Every item in the consistency array",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "timeliness": {
+              "type": "array",
+              "description": "Property. Timeliness scores for variables",
+              "items": {
+                "type": "number",
+                "description": "Property. Every item in the timeliness array",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "uniqueness": {
+              "type": "array",
+              "description": "Property. Uniqueness scores for variables",
+              "items": {
+                "type": "number",
+                "description": "Property. Every item in the uniqueness array",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "validity": {
+              "type": "array",
+              "description": "Property. Validity scores for variables",
+              "items": {
+                "type": "number",
+                "description": "Property. Every item in the validity array",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          }
         }
       }
     }
