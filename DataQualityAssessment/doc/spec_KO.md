@@ -188,7 +188,7 @@ DataQualityAssessment:
             type: Property    
       description: Unique identifier of the entity    
       x-ngsi:    
-        type: Property    
+        type: Relationship    
     location:    
       description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'    
       oneOf:    
@@ -410,7 +410,7 @@ DataQualityAssessment:
               type: Property    
         description: Unique identifier of the entity    
         x-ngsi:    
-          type: Property    
+          type: Relationship    
       type: array    
       x-ngsi:    
         type: Property    
@@ -517,6 +517,27 @@ DataQualityAssessment:
     "isSynthetic": false,  
     "methodology": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"  
   },  
+  "dataQualityAssessmentDomains": {  
+      "completeness":[1,1,1,1,1,1,1,0.9865,1,1,0.9595,0.9595],  
+      "consistency":[1,1,1,1,1,1,1,1,1,1,1,1],  
+      "timeliness": [0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9211,0.9342,0.9342,0.8947,0.8947],  
+      "uniqueness": [1,1,1,1,1,1,1,1,1,1,1,1],  
+      "validity": [1,1,1,1,1,1,1,1,1,1,1,1]  
+  },  
+  "dataQualityAssessmentVariableNames": [  
+      "dataProvider",  
+      "dateObserved",  
+      "entityId",  
+      "location.coordinates.0",  
+      "location.coordinates.1",  
+      "location.type",  
+      "precipitation",  
+      "relativeHumidity",  
+      "temperature",  
+      "entityType",  
+      "windDirection",  
+      "windSpeed"  
+  ],  
   "accuracy": 0.25,  
   "timeliness": 3,  
   "precision": 1.3,  
@@ -560,6 +581,48 @@ DataQualityAssessment:
       "isSynthetic": false,  
       "methodology": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"  
     }  
+  },  
+  "dataQualityAssessmentDomains": {  
+    "type": "object",  
+    "value": {  
+      "completeness": {  
+        "type": "array",  
+        "value": [1,1,1,1,1,1,1,0.9865,1,1,0.9595,0.9595]  
+      },  
+      "consistency": {  
+        "type": "array",  
+        "value": [1,1,1,1,1,1,1,1,1,1,1,1]  
+      },  
+      "timeliness": {  
+        "type": "array",  
+        "value": [0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9211,0.9342,0.9342,0.8947,0.8947]  
+      },  
+      "uniqueness": {  
+        "type": "array",  
+        "value": [1,1,1,1,1,1,1,1,1,1,1,1]  
+      },  
+      "validity": {  
+        "type": "array",  
+        "value": [1,1,1,1,1,1,1,1,1,1,1,1]  
+      }  
+    }  
+  },  
+  "dataQualityAssessmentVariableNames": {  
+      "type": "array",  
+      "value": [  
+        "dataProvider",  
+        "dateObserved",  
+        "entityId",  
+        "location.coordinates.0",  
+        "location.coordinates.1",  
+        "location.type",  
+        "precipitation",  
+        "relativeHumidity",  
+        "temperature",  
+        "entityType",  
+        "windDirection",  
+        "windSpeed"  
+    ]    
   },  
   "precision": {  
     "type": "Number",  
