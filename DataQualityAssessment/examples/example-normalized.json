@@ -33,32 +33,32 @@
   },
   "dataQualityAssessmentDomains": {
     "type": "object",
-    "properties": {
+    "value": {
       "completeness": {
         "type": "array",
-        "items": [1,1,1,1,1,1,1,0.9865,1,1,0.9595,0.9595]
+        "value": [1,1,1,1,1,1,1,0.9865,1,1,0.9595,0.9595]
       },
       "consistency": {
         "type": "array",
-        "items": [1,1,1,1,1,1,1,1,1,1,1,1]
+        "value": [1,1,1,1,1,1,1,1,1,1,1,1]
       },
       "timeliness": {
         "type": "array",
-        "items": [0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9211,0.9342,0.9342,0.8947,0.8947]
+        "value": [0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9211,0.9342,0.9342,0.8947,0.8947]
       },
       "uniqueness": {
         "type": "array",
-        "items": [1,1,1,1,1,1,1,1,1,1,1,1]
+        "value": [1,1,1,1,1,1,1,1,1,1,1,1]
       },
       "validity": {
         "type": "array",
-        "items": [1,1,1,1,1,1,1,1,1,1,1,1]
+        "value": [1,1,1,1,1,1,1,1,1,1,1,1]
       }
     }
   },
   "dataQualityAssessmentVariableNames": {
       "type": "array",
-      "items": [
+      "value": [
         "dataProvider",
         "dateObserved",
         "entityId",
