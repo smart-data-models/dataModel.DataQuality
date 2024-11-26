@@ -14,7 +14,7 @@
 
 ## Liste der Eigenschaften  
 
-<sup><sub>[*] Wenn es für ein Attribut keinen Typ gibt, kann es mehrere Typen oder verschiedene Formate/Muster haben</sub></sup>.  
+<sup><sub>[*] Wenn es für ein Attribut keinen Typ gibt, liegt das daran, dass es mehrere Typen oder unterschiedliche Formate/Muster haben kann</sub></sup>.  
 - `accuracy[number]`: Die Genauigkeit misst den maximalen systematischen numerischen Fehler, der bei einer Sensormessung auftritt.  - `address[object]`: Die Postanschrift  . Model: [https://schema.org/address](https://schema.org/address)	- `addressCountry[string]`: Das Land. Zum Beispiel, Spanien  . Model: [https://schema.org/addressCountry](https://schema.org/addressCountry)  
 	- `addressLocality[string]`: Die Ortschaft, in der sich die Adresse befindet, und die in der Region liegt  . Model: [https://schema.org/addressLocality](https://schema.org/addressLocality)  
 	- `addressRegion[string]`: Die Region, in der sich der Ort befindet, und die auf dem Land liegt  . Model: [https://schema.org/addressRegion](https://schema.org/addressRegion)  
@@ -188,7 +188,7 @@ DataQualityAssessment:
             type: Property    
       description: Unique identifier of the entity    
       x-ngsi:    
-        type: Property    
+        type: Relationship    
     location:    
       description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'    
       oneOf:    
@@ -410,7 +410,7 @@ DataQualityAssessment:
               type: Property    
         description: Unique identifier of the entity    
         x-ngsi:    
-          type: Property    
+          type: Relationship    
       type: array    
       x-ngsi:    
         type: Property    
@@ -517,6 +517,27 @@ DataQualityAssessment:
     "isSynthetic": false,  
     "methodology": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"  
   },  
+  "dataQualityAssessmentDomains": {  
+      "completeness":[1,1,1,1,1,1,1,0.9865,1,1,0.9595,0.9595],  
+      "consistency":[1,1,1,1,1,1,1,1,1,1,1,1],  
+      "timeliness": [0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9211,0.9342,0.9342,0.8947,0.8947],  
+      "uniqueness": [1,1,1,1,1,1,1,1,1,1,1,1],  
+      "validity": [1,1,1,1,1,1,1,1,1,1,1,1]  
+  },  
+  "dataQualityAssessmentVariableNames": [  
+      "dataProvider",  
+      "dateObserved",  
+      "entityId",  
+      "location.coordinates.0",  
+      "location.coordinates.1",  
+      "location.type",  
+      "precipitation",  
+      "relativeHumidity",  
+      "temperature",  
+      "entityType",  
+      "windDirection",  
+      "windSpeed"  
+  ],  
   "accuracy": 0.25,  
   "timeliness": 3,  
   "precision": 1.3,  
@@ -561,6 +582,48 @@ DataQualityAssessment:
       "methodology": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"  
     }  
   },  
+  "dataQualityAssessmentDomains": {  
+    "type": "object",  
+    "value": {  
+      "completeness": {  
+        "type": "array",  
+        "value": [1,1,1,1,1,1,1,0.9865,1,1,0.9595,0.9595]  
+      },  
+      "consistency": {  
+        "type": "array",  
+        "value": [1,1,1,1,1,1,1,1,1,1,1,1]  
+      },  
+      "timeliness": {  
+        "type": "array",  
+        "value": [0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9211,0.9342,0.9342,0.8947,0.8947]  
+      },  
+      "uniqueness": {  
+        "type": "array",  
+        "value": [1,1,1,1,1,1,1,1,1,1,1,1]  
+      },  
+      "validity": {  
+        "type": "array",  
+        "value": [1,1,1,1,1,1,1,1,1,1,1,1]  
+      }  
+    }  
+  },  
+  "dataQualityAssessmentVariableNames": {  
+      "type": "array",  
+      "value": [  
+        "dataProvider",  
+        "dateObserved",  
+        "entityId",  
+        "location.coordinates.0",  
+        "location.coordinates.1",  
+        "location.type",  
+        "precipitation",  
+        "relativeHumidity",  
+        "temperature",  
+        "entityType",  
+        "windDirection",  
+        "windSpeed"  
+    ]    
+  },  
   "precision": {  
     "type": "Number",  
     "value": 1.3  
@@ -580,7 +643,7 @@ DataQualityAssessment:
 }  
 ```  
 </details>  
-#### DataQualityAssessment NGSI-LD Schlüsselwerte Beispiel  
+#### DataQualityAssessment NGSI-LD key-values Beispiel  
 Hier ist ein Beispiel für ein DataQualityAssessment im JSON-LD-Format als Key-Values. Dies ist mit NGSI-LD kompatibel, wenn `options=keyValues` verwendet wird und liefert die Kontextdaten einer einzelnen Entität.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
