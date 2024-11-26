@@ -8,7 +8,7 @@
 <!-- /15-License -->  
 <!-- 20-Description -->  
 Global description: **This entity describes the data quality properties of a measurement, such as temperature.**  
-version: 0.0.3  
+version: 0.0.4  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
 
@@ -23,8 +23,8 @@
 	- `postalCode[string]`: The postal code. For example, 24004  . Model: [https://schema.org/https://schema.org/postalCode](https://schema.org/https://schema.org/postalCode)  
 	- `streetAddress[string]`: The street address  . Model: [https://schema.org/streetAddress](https://schema.org/streetAddress)  
 	- `streetNr[string]`: Number identifying a specific property on a public street    
-- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: Completeness quantifies the number of missed measurements or observations in a given time window  - `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  - `dateCalculated[date-time]`: Date of the calculated entity defined by the user  - `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  - `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  - `description[string]`: A description of this item  - `duplicate[object]`: Includes information about duplicated data  	- `foundMatches[array]`: Property: If this is a duplicate, determine measurements it does match with    
-	- `isDuplicate[boolean]`: Property: Determine whether the measurement is duplicated or not    
+- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: Completeness quantifies the number of missed measurements or observations in a given time window  - `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  - `dateCalculated[date-time]`: Date of the calculated entity defined by the user  - `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  - `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  - `description[string]`: A description of this item  - `duplicate[object]`: Includes information about duplicated data  	- `foundMatches[array]`: If this is a duplicate, determine measurements it does match with    
+	- `isDuplicate[boolean]`: Determine whether the measurement is duplicated or not    
 - `id[*]`: Unique identifier of the entity  - `location[*]`: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  - `name[string]`: The name of this item  - `outlier[object]`: Includes information about the outlier characteristics of the measurement  	- `isOutlier[boolean]`: Determine whether the measurement has been considered an outlier or not    
 	- `methodology[*]`: Reference to the other entity including AI methodology information    
 	- `outlierScore[number]`: A score indicating the degree of outlierness    
@@ -188,7 +188,7 @@ DataQualityAssessment:
             type: Property    
       description: Unique identifier of the entity    
       x-ngsi:    
-        type: Property    
+        type: Relationship    
     location:    
       description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'    
       oneOf:    
@@ -410,7 +410,7 @@ DataQualityAssessment:
               type: Property    
         description: Unique identifier of the entity    
         x-ngsi:    
-          type: Property    
+          type: Relationship    
       type: array    
       x-ngsi:    
         type: Property    
@@ -517,6 +517,27 @@ DataQualityAssessment:
     "isSynthetic": false,  
     "methodology": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"  
   },  
+  "dataQualityAssessmentDomains": {  
+      "completeness":[1,1,1,1,1,1,1,0.9865,1,1,0.9595,0.9595],  
+      "consistency":[1,1,1,1,1,1,1,1,1,1,1,1],  
+      "timeliness": [0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9211,0.9342,0.9342,0.8947,0.8947],  
+      "uniqueness": [1,1,1,1,1,1,1,1,1,1,1,1],  
+      "validity": [1,1,1,1,1,1,1,1,1,1,1,1]  
+  },  
+  "dataQualityAssessmentVariableNames": [  
+      "dataProvider",  
+      "dateObserved",  
+      "entityId",  
+      "location.coordinates.0",  
+      "location.coordinates.1",  
+      "location.type",  
+      "precipitation",  
+      "relativeHumidity",  
+      "temperature",  
+      "entityType",  
+      "windDirection",  
+      "windSpeed"  
+  ],  
   "accuracy": 0.25,  
   "timeliness": 3,  
   "precision": 1.3,  
@@ -560,6 +581,48 @@ DataQualityAssessment:
       "isSynthetic": false,  
       "methodology": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"  
     }  
+  },  
+  "dataQualityAssessmentDomains": {  
+    "type": "object",  
+    "value": {  
+      "completeness": {  
+        "type": "array",  
+        "value": [1,1,1,1,1,1,1,0.9865,1,1,0.9595,0.9595]  
+      },  
+      "consistency": {  
+        "type": "array",  
+        "value": [1,1,1,1,1,1,1,1,1,1,1,1]  
+      },  
+      "timeliness": {  
+        "type": "array",  
+        "value": [0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9211,0.9342,0.9342,0.8947,0.8947]  
+      },  
+      "uniqueness": {  
+        "type": "array",  
+        "value": [1,1,1,1,1,1,1,1,1,1,1,1]  
+      },  
+      "validity": {  
+        "type": "array",  
+        "value": [1,1,1,1,1,1,1,1,1,1,1,1]  
+      }  
+    }  
+  },  
+  "dataQualityAssessmentVariableNames": {  
+      "type": "array",  
+      "value": [  
+        "dataProvider",  
+        "dateObserved",  
+        "entityId",  
+        "location.coordinates.0",  
+        "location.coordinates.1",  
+        "location.type",  
+        "precipitation",  
+        "relativeHumidity",  
+        "temperature",  
+        "entityType",  
+        "windDirection",  
+        "windSpeed"  
+    ]    
   },  
   "precision": {  
     "type": "Number",  
