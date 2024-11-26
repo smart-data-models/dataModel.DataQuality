@@ -23,9 +23,9 @@
 	- `postalCode[string]`: Il codice postale. Ad esempio, 24004  . Model: [https://schema.org/https://schema.org/postalCode](https://schema.org/https://schema.org/postalCode)  
 	- `streetAddress[string]`: L'indirizzo stradale  . Model: [https://schema.org/streetAddress](https://schema.org/streetAddress)  
 	- `streetNr[string]`: Numero che identifica una proprietà specifica su una strada pubblica    
-- `alternateName[string]`: Un nome alternativo per questa voce  - `areaServed[string]`: L'area geografica in cui viene fornito il servizio o l'articolo offerto.  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: La completezza quantifica il numero di misurazioni o osservazioni mancate in una determinata finestra temporale.  - `dataProvider[string]`: una sequenza di caratteri che identifica il fornitore dell'entità di dati armonizzati  - `dateCalculated[date-time]`: Data dell'entità calcolata definita dall'utente  - `dateCreated[date-time]`: Timestamp di creazione dell'entità. Di solito viene assegnato dalla piattaforma di archiviazione  - `dateModified[date-time]`: Timestamp dell'ultima modifica dell'entità. Di solito viene assegnato dalla piattaforma di archiviazione  - `description[string]`: Descrizione dell'articolo  - `duplicate[object]`: Include informazioni sui dati duplicati  	- `foundMatches[array]`: Se si tratta di un duplicato, determinare le misure che corrispondono con    
+- `alternateName[string]`: Un nome alternativo per questa voce  - `areaServed[string]`: L'area geografica in cui viene fornito il servizio o l'articolo offerto.  . Model: [https://schema.org/Text](https://schema.org/Text)- `completeness[number]`: La completezza quantifica il numero di misurazioni o osservazioni mancate in una determinata finestra temporale.  - `dataProvider[string]`: una sequenza di caratteri che identifica il fornitore dell'entità di dati armonizzata  - `dateCalculated[date-time]`: Data dell'entità calcolata definita dall'utente  - `dateCreated[date-time]`: Timestamp di creazione dell'entità. Di solito viene assegnato dalla piattaforma di archiviazione  - `dateModified[date-time]`: Timestamp dell'ultima modifica dell'entità. Di solito viene assegnato dalla piattaforma di archiviazione  - `description[string]`: Descrizione dell'articolo  - `duplicate[object]`: Include informazioni sui dati duplicati  	- `foundMatches[array]`: Se si tratta di un duplicato, determinare le misure che corrispondono con    
 	- `isDuplicate[boolean]`: Determinare se la misura è duplicata o meno    
-- `id[*]`: Identificatore univoco dell'entità  - `location[*]`: Riferimento Geojson all'elemento. Può essere un punto, una stringa di linea, un poligono, un multi-punto, una stringa di linea o un poligono multiplo.  - `name[string]`: Il nome di questo elemento  - `outlier[object]`: Include informazioni sulle caratteristiche di outlier della misura.  	- `isOutlier[boolean]`: Determinare se la misura è stata considerata un outlier o meno.    
+- `id[*]`: Identificatore univoco dell'entità  - `location[*]`: Riferimento geojson all'elemento. Può essere un punto, una stringa di linea, un poligono, un multi-punto, una stringa di linea o un poligono multiplo.  - `name[string]`: Il nome di questo elemento  - `outlier[object]`: Include informazioni sulle caratteristiche di outlier della misura.  	- `isOutlier[boolean]`: Determinare se la misura è stata considerata un outlier o meno.    
 	- `methodology[*]`: Riferimento all'altra entità, comprese le informazioni sulla metodologia AI    
 	- `outlierScore[number]`: Un punteggio che indica il grado di intemperanza    
 - `owner[array]`: Un elenco contenente una sequenza di caratteri codificata JSON che fa riferimento agli ID univoci dei proprietari.  - `precision[number]`: La precisione misura la deviazione standard di un set di dati. In altre parole, misura quanto i valori del set di dati siano vicini l'uno all'altro.  - `seeAlso[*]`: elenco di uri che puntano a risorse aggiuntive sull'elemento  - `source[string]`: Una sequenza di caratteri che indica la fonte originale dei dati dell'entità come URL. Si consiglia di utilizzare il nome di dominio completamente qualificato del provider di origine o l'URL dell'oggetto di origine.  - `synthetic[object]`: Include informazioni sull'origine della misura  	- `isSynthetic[boolean]`: Determinare se la misura è stata creata in modo sintetico o meno.    
@@ -188,7 +188,7 @@ DataQualityAssessment:
             type: Property    
       description: Unique identifier of the entity    
       x-ngsi:    
-        type: Property    
+        type: Relationship    
     location:    
       description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'    
       oneOf:    
@@ -410,7 +410,7 @@ DataQualityAssessment:
               type: Property    
         description: Unique identifier of the entity    
         x-ngsi:    
-          type: Property    
+          type: Relationship    
       type: array    
       x-ngsi:    
         type: Property    
@@ -494,7 +494,7 @@ DataQualityAssessment:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Esempi di payload  
-#### Valutazione della qualità dei dati Valori-chiave NGSI-v2 Esempio  
+#### Valutazione della qualità dei dati Valori chiave NGSI-v2 Esempio  
 Ecco un esempio di DataQualityAssessment in formato JSON-LD come valori-chiave. Questo è compatibile con NGSI-v2 quando si usa `options=keyValues` e restituisce i dati di contesto di una singola entità.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
@@ -517,6 +517,27 @@ DataQualityAssessment:
     "isSynthetic": false,  
     "methodology": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"  
   },  
+  "dataQualityAssessmentDomains": {  
+      "completeness":[1,1,1,1,1,1,1,0.9865,1,1,0.9595,0.9595],  
+      "consistency":[1,1,1,1,1,1,1,1,1,1,1,1],  
+      "timeliness": [0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9211,0.9342,0.9342,0.8947,0.8947],  
+      "uniqueness": [1,1,1,1,1,1,1,1,1,1,1,1],  
+      "validity": [1,1,1,1,1,1,1,1,1,1,1,1]  
+  },  
+  "dataQualityAssessmentVariableNames": [  
+      "dataProvider",  
+      "dateObserved",  
+      "entityId",  
+      "location.coordinates.0",  
+      "location.coordinates.1",  
+      "location.type",  
+      "precipitation",  
+      "relativeHumidity",  
+      "temperature",  
+      "entityType",  
+      "windDirection",  
+      "windSpeed"  
+  ],  
   "accuracy": 0.25,  
   "timeliness": 3,  
   "precision": 1.3,  
@@ -525,7 +546,7 @@ DataQualityAssessment:
 ```  
 </details>  
 #### Valutazione della qualità dei dati NGSI-v2 normalizzato Esempio  
-Ecco un esempio di DataQualityAssessment in formato JSON-LD normalizzato. Questo è compatibile con NGSI-v2 quando non si utilizzano le opzioni e restituisce i dati di contesto di una singola entità.  
+Ecco un esempio di DataQualityAssessment in formato JSON-LD normalizzato. Questo è compatibile con NGSI-v2 quando non si utilizzano opzioni e restituisce i dati di contesto di una singola entità.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -560,6 +581,48 @@ DataQualityAssessment:
       "isSynthetic": false,  
       "methodology": "urn:ngsi-ld:AI-Methodology:Synthetic:Temperature:smartsantander:u7jcfa:f3058"  
     }  
+  },  
+  "dataQualityAssessmentDomains": {  
+    "type": "object",  
+    "value": {  
+      "completeness": {  
+        "type": "array",  
+        "value": [1,1,1,1,1,1,1,0.9865,1,1,0.9595,0.9595]  
+      },  
+      "consistency": {  
+        "type": "array",  
+        "value": [1,1,1,1,1,1,1,1,1,1,1,1]  
+      },  
+      "timeliness": {  
+        "type": "array",  
+        "value": [0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9342,0.9211,0.9342,0.9342,0.8947,0.8947]  
+      },  
+      "uniqueness": {  
+        "type": "array",  
+        "value": [1,1,1,1,1,1,1,1,1,1,1,1]  
+      },  
+      "validity": {  
+        "type": "array",  
+        "value": [1,1,1,1,1,1,1,1,1,1,1,1]  
+      }  
+    }  
+  },  
+  "dataQualityAssessmentVariableNames": {  
+      "type": "array",  
+      "value": [  
+        "dataProvider",  
+        "dateObserved",  
+        "entityId",  
+        "location.coordinates.0",  
+        "location.coordinates.1",  
+        "location.type",  
+        "precipitation",  
+        "relativeHumidity",  
+        "temperature",  
+        "entityType",  
+        "windDirection",  
+        "windSpeed"  
+    ]    
   },  
   "precision": {  
     "type": "Number",  
