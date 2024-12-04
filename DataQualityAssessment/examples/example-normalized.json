@@ -73,6 +73,67 @@
         "windSpeed"
     ]  
   },
+  "dataQualityAssessmentParameters": {
+    "type": "object",
+    "value": {
+      "id_columns": {
+        "type": "array",
+        "value": ["_id", "entityId"]
+      },
+      "date_column": {
+        "type": "string",
+        "value": "dateObserved"
+      },
+      "drop_columns": {
+        "type": "array",
+        "value": ["entityType"]
+      },
+      "group_id": {
+        "type": "array",
+        "value": ["location.type", "windDirection"]
+      },
+      "lower_bd": {
+        "type": "number",
+        "value": 0.0
+      },
+      "upper_bd": {
+        "type": "number",
+        "value": 999999
+      },
+      "all_positive": {
+        "type": "boolean",
+        "value": false
+      },
+      "non_zero": {
+        "type": "boolean",
+        "value": false
+      },
+      "str_min_len": {
+        "type": "integer",
+        "value": 0
+      },
+      "str_max_len": {
+        "type": "integer",
+        "value": 0
+      },
+      "dec_places": {
+        "type": "integer",
+        "value": 1
+      },
+      "thousands_sep": {
+        "type": "boolean",
+        "value": false
+      },
+      "freq_unit": {
+        "type": "string",
+        "value": "H"
+      },
+      "freq_num": {
+        "type": "integer",
+        "value": 5
+      }
+    }
+  },
   "precision": {
     "type": "Number",
     "value": 1.3

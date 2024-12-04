@@ -190,6 +190,84 @@
               }
             }
           }
+        },
+        "dataQualityAssessmentParameters": {
+          "type": "object",
+          "description": "Property. Configuration parameters for data quality assessment",
+          "properties": {
+            "id_columns": {
+              "type": "array",
+              "description": "Property. Columns used as identifiers in the dataset",
+              "items": {
+                "type": "string",
+                "description": "Property. Every item in the id_columns array"
+              }
+            },
+            "date_column": {
+              "type": "string",
+              "description": "Property. Name of the column containing date information used for timeliness assessments"
+            },
+            "drop_columns": {
+              "type": "array",
+              "description": "Property. Columns to be excluded from data quality assessment",
+              "items": {
+                "type": "string",
+                "description": "Property. Every item in the drop_columns array"
+              }
+            },
+            "group_id": {
+              "type": "array",
+              "description": "Property. Columns used for grouping data in quality assessments",
+              "items": {
+                "type": "string",
+                "description": "Property. Every item in the group_id array"
+              }
+            },
+            "lower_bd": {
+              "type": "number",
+              "description": "Property. Minimum acceptable value for numeric data"
+            },
+            "upper_bd": {
+              "type": "number",
+              "description": "Property. Maximum acceptable value for numeric data"
+            },
+            "all_positive": {
+              "type": "boolean",
+              "description": "Property. Whether all numeric values must be positive"
+            },
+            "non_zero": {
+              "type": "boolean",
+              "description": "Property. Whether all numeric values must be non-zero"
+            },
+            "str_min_len": {
+              "type": "integer",
+              "description": "Property. Minimum acceptable length for string values",
+              "minimum": 0
+            },
+            "str_max_len": {
+              "type": "integer",
+              "description": "Property. Maximum acceptable length for string values",
+              "minimum": 0
+            },
+            "dec_places": {
+              "type": "integer",
+              "description": "Property. Maximum number of decimal places allowed for numeric values",
+              "minimum": 0
+            },
+            "thousands_sep": {
+              "type": "boolean",
+              "description": "Property. Whether numeric values can include thousands separators"
+            },
+            "freq_unit": {
+              "type": "string",
+              "description": "Property. Unit of frequency for data timestamps",
+              "enum": ["Y", "M", "D", "H", "T", "S", "L", "U", "N"]
+            },
+            "freq_num": {
+              "type": "integer",
+              "description": "Property. Number of frequency units to consider"
+            }
+          }
         }
       }
     }
