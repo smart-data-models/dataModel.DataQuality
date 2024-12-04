@@ -38,6 +38,22 @@
       "windDirection",
       "windSpeed"
   ],
+  "dataQualityAssessmentParameters": {
+    "id_columns": ["_id", "entityId"],
+    "date_column": "dateObserved",
+    "drop_columns": ["entityType"],
+    "group_id": ["location.type", "windDirection"],
+    "lower_bd": 0.0,
+    "upper_bd": 999999,
+    "all_positive": false,
+    "non_zero": false,
+    "str_min_len": 0,
+    "str_max_len": 0,
+    "dec_places": 1,
+    "thousands_sep": false,
+    "freq_unit": "H",
+    "freq_num": 5
+    },
   "accuracy": 0.25,
   "timeliness": 3,
   "precision": 1.3,
