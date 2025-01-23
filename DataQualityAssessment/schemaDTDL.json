@@ -122,6 +122,16 @@
         },
         {
             "@type": "Telemetry",
+            "name": "dataQualityAssessmentVariableNames",
+            "schema": {
+                "@type": "Array",
+                "elementSchema": "string"
+            },
+            "comment": "Array of variable names used to describe the values for each dataQualityAssessmentDomain property",
+            "displayName": "dataQualityAssessmentVariableNames"
+        },
+        {
+            "@type": "Telemetry",
             "name": "owner",
             "schema": {
                 "@type": "Array",
@@ -167,6 +177,98 @@
                 {
                     "name": "streetNr",
                     "schema": "string"
+                }
+            ]
+        },
+        {
+            "@type": "object",
+            "name": "dataQualityAssessmentDomains",
+            "comment": "Data quality assessment domains with their respective scores",
+            "displayName": "dataQualityAssessmentDomains",
+            "fields": [
+                {
+                    "name": "completeness",
+                    "schema": "array"
+                },
+                {
+                    "name": "consistency",
+                    "schema": "array"
+                },
+                {
+                    "name": "timeliness",
+                    "schema": "array"
+                },
+                {
+                    "name": "uniqueness",
+                    "schema": "array"
+                },
+                {
+                    "name": "validity",
+                    "schema": "array"
+                }
+            ]
+        },
+        {
+            "@type": "object",
+            "name": "dataQualityAssessmentParameters",
+            "comment": "Configuration parameters for data quality assessment",
+            "displayName": "dataQualityAssessmentParameters",
+            "fields": [
+                {
+                    "name": "all_positive",
+                    "schema": "boolean"
+                },
+                {
+                    "name": "date_column",
+                    "schema": "string"
+                },
+                {
+                    "name": "dec_places",
+                    "schema": "integer"
+                },
+                {
+                    "name": "drop_columns",
+                    "schema": "array"
+                },
+                {
+                    "name": "freq_num",
+                    "schema": "integer"
+                },
+                {
+                    "name": "freq_unit",
+                    "schema": "enum"
+                },
+                {
+                    "name": "group_id",
+                    "schema": "array"
+                },
+                {
+                    "name": "id_columns",
+                    "schema": "array"
+                },
+                {
+                    "name": "lower_bd",
+                    "schema": "long"
+                },
+                {
+                    "name": "non_zero",
+                    "schema": "boolean"
+                },
+                {
+                    "name": "str_max_len",
+                    "schema": "integer"
+                },
+                {
+                    "name": "str_min_len",
+                    "schema": "integer"
+                },
+                {
+                    "name": "thousands_sep",
+                    "schema": "boolean"
+                },
+                {
+                    "name": "upper_bd",
+                    "schema": "long"
                 }
             ]
         },
