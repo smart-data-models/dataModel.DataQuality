@@ -128,6 +128,186 @@ DataQualityAssessment:
       type: string    
       x-ngsi:    
         type: Property    
+    dataQualityAssessmentDomains:    
+      description: Data quality assessment domains with their respective scores    
+      properties:    
+        completeness:    
+          description: Completeness scores for variables    
+          items:    
+            description: Every item in the completeness array    
+            maximum: 1    
+            minimum: 0    
+            type: number    
+            x-ngsi:    
+              type: Property    
+          type: array    
+          x-ngsi:    
+            type: Property    
+        consistency:    
+          description: Consistency scores for variables    
+          items:    
+            description: Every item in the consistency array    
+            maximum: 1    
+            minimum: 0    
+            type: number    
+            x-ngsi:    
+              type: Property    
+          type: array    
+          x-ngsi:    
+            type: Property    
+        timeliness:    
+          description: Timeliness scores for variables    
+          items:    
+            description: Every item in the timeliness array    
+            maximum: 1    
+            minimum: 0    
+            type: number    
+            x-ngsi:    
+              type: Property    
+          type: array    
+          x-ngsi:    
+            type: Property    
+        uniqueness:    
+          description: Uniqueness scores for variables    
+          items:    
+            description: Every item in the uniqueness array    
+            maximum: 1    
+            minimum: 0    
+            type: number    
+            x-ngsi:    
+              type: Property    
+          type: array    
+          x-ngsi:    
+            type: Property    
+        validity:    
+          description: Validity scores for variables    
+          items:    
+            description: Every item in the validity array    
+            maximum: 1    
+            minimum: 0    
+            type: number    
+            x-ngsi:    
+              type: Property    
+          type: array    
+          x-ngsi:    
+            type: Property    
+      type: object    
+      x-ngsi:    
+        type: Property    
+    dataQualityAssessmentParameters:    
+      description: Configuration parameters for data quality assessment    
+      properties:    
+        all_positive:    
+          description: Whether all numeric values must be positive    
+          type: boolean    
+          x-ngsi:    
+            type: Property    
+        date_column:    
+          description: Name of the column containing date information used for timeliness assessments    
+          type: string    
+          x-ngsi:    
+            type: Property    
+        dec_places:    
+          description: Maximum number of decimal places allowed for numeric values    
+          minimum: 0    
+          type: integer    
+          x-ngsi:    
+            type: Property    
+        drop_columns:    
+          description: Columns to be excluded from data quality assessment    
+          items:    
+            description: Every item in the drop_columns array    
+            type: string    
+            x-ngsi:    
+              type: Property    
+          type: array    
+          x-ngsi:    
+            type: Property    
+        freq_num:    
+          description: Number of frequency units to consider    
+          type: integer    
+          x-ngsi:    
+            type: Property    
+        freq_unit:    
+          description: Unit of frequency for data timestamps    
+          enum:    
+            - Y    
+            - M    
+            - D    
+            - H    
+            - T    
+            - S    
+            - L    
+            - U    
+            - N    
+          type: string    
+          x-ngsi:    
+            type: Property    
+        group_id:    
+          description: Columns used for grouping data in quality assessments    
+          items:    
+            description: Every item in the group_id array    
+            type: string    
+            x-ngsi:    
+              type: Property    
+          type: array    
+          x-ngsi:    
+            type: Property    
+        id_columns:    
+          description: Columns used as identifiers in the dataset    
+          items:    
+            description: Every item in the id_columns array    
+            type: string    
+            x-ngsi:    
+              type: Property    
+          type: array    
+          x-ngsi:    
+            type: Property    
+        lower_bd:    
+          description: Minimum acceptable value for numeric data    
+          type: number    
+          x-ngsi:    
+            type: Property    
+        non_zero:    
+          description: Whether all numeric values must be non-zero    
+          type: boolean    
+          x-ngsi:    
+            type: Property    
+        str_max_len:    
+          description: Maximum acceptable length for string values    
+          minimum: 0    
+          type: integer    
+          x-ngsi:    
+            type: Property    
+        str_min_len:    
+          description: Minimum acceptable length for string values    
+          minimum: 0    
+          type: integer    
+          x-ngsi:    
+            type: Property    
+        thousands_sep:    
+          description: Whether numeric values can include thousands separators    
+          type: boolean    
+          x-ngsi:    
+            type: Property    
+        upper_bd:    
+          description: Maximum acceptable value for numeric data    
+          type: number    
+          x-ngsi:    
+            type: Property    
+      type: object    
+      x-ngsi:    
+        type: Property    
+    dataQualityAssessmentVariableNames:    
+      description: Array of variable names used to describe the values for each dataQualityAssessmentDomain property    
+      items:    
+        description: Every item in the variable names array    
+        type: string    
+        x-ngsi:    
+          type: Property    
+      type: array    
+      x-ngsi:    
+        type: Relationship    
     dateCalculated:    
       description: Date of the calculated entity defined by the user    
       format: date-time    
@@ -486,7 +666,7 @@ DataQualityAssessment:
   x-license-url: https://github.com/smart-data-models/dataModel.DataQuality/blob/master/DataQualityAssessment/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.DataQuality/DataQualityAssessment/schema.json    
   x-model-tags: ""    
-  x-version: 0.0.4    
+  x-version: 0.0.5    
 ```  
 </details>    
 <!-- /60-ModelYaml -->  
@@ -538,6 +718,22 @@ DataQualityAssessment:
       "windDirection",  
       "windSpeed"  
   ],  
+  "dataQualityAssessmentParameters": {  
+    "id_columns": ["_id", "entityId"],  
+    "date_column": "dateObserved",  
+    "drop_columns": ["entityType"],  
+    "group_id": ["location.type", "windDirection"],  
+    "lower_bd": 0.0,  
+    "upper_bd": 999999,  
+    "all_positive": false,  
+    "non_zero": false,  
+    "str_min_len": 0,  
+    "str_max_len": 0,  
+    "dec_places": 1,  
+    "thousands_sep": false,  
+    "freq_unit": "H",  
+    "freq_num": 5  
+    },  
   "accuracy": 0.25,  
   "timeliness": 3,  
   "precision": 1.3,  
@@ -623,6 +819,67 @@ DataQualityAssessment:
         "windDirection",  
         "windSpeed"  
     ]    
+  },  
+  "dataQualityAssessmentParameters": {  
+    "type": "object",  
+    "value": {  
+      "id_columns": {  
+        "type": "array",  
+        "value": ["_id", "entityId"]  
+      },  
+      "date_column": {  
+        "type": "string",  
+        "value": "dateObserved"  
+      },  
+      "drop_columns": {  
+        "type": "array",  
+        "value": ["entityType"]  
+      },  
+      "group_id": {  
+        "type": "array",  
+        "value": ["location.type", "windDirection"]  
+      },  
+      "lower_bd": {  
+        "type": "number",  
+        "value": 0.0  
+      },  
+      "upper_bd": {  
+        "type": "number",  
+        "value": 999999  
+      },  
+      "all_positive": {  
+        "type": "boolean",  
+        "value": false  
+      },  
+      "non_zero": {  
+        "type": "boolean",  
+        "value": false  
+      },  
+      "str_min_len": {  
+        "type": "integer",  
+        "value": 0  
+      },  
+      "str_max_len": {  
+        "type": "integer",  
+        "value": 0  
+      },  
+      "dec_places": {  
+        "type": "integer",  
+        "value": 1  
+      },  
+      "thousands_sep": {  
+        "type": "boolean",  
+        "value": false  
+      },  
+      "freq_unit": {  
+        "type": "string",  
+        "value": "H"  
+      },  
+      "freq_num": {  
+        "type": "integer",  
+        "value": 5  
+      }  
+    }  
   },  
   "precision": {  
     "type": "Number",  
